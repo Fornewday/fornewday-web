@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><rdf:Description><dc:creator>RealFaviconGenerator</dc:creator><dc:source>https://realfavicongenerator.net</dc:source></rdf:Description></rdf:RDF></metadata><style>
+    #light-icon {
+      display: inline;
+    }
+    #dark-icon {
+      display: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #light-icon {
+        display: none;
+      }
+      #dark-icon {
+        display: inline;
+      }
+    }
+  </style><g id="light-icon"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><g clip-path="url(#SvgjsClipPath1005)"><rect width="1000" height="1000" fill="#ffffff"></rect><g transform="matrix(1.75,0,0,1.75,325,150)"><svg xmlns="http://www.w3.org/2000/svg" width="200" height="400" viewBox="0 0 200 400" fill="none"><rect x="78" y="8" width="44" height="32" rx="4" fill="#00c853" stroke="#00c853" stroke-width="8"></rect><rect x="30" y="38" width="140" height="340" rx="8" fill="none" stroke="#00c853" stroke-width="14"></rect><g fill="#00c853">
+    <rect x="96" y="68" width="8" height="26" rx="1"></rect>
+    <rect x="88" y="77" width="24" height="8" rx="1"></rect>
+  </g><g transform="translate(100, 200) scale(1.6)">
+    <path d="M0,38 
+             C0,38 -38,5 -38,-25 
+             C-38,-48 -20,-60 0,-42 
+             C20,-60 38,-48 38,-25 
+             C38,5 0,38 0,38 Z" fill="#00c853"></path>
+  </g><rect x="88" y="325" width="24" height="8" rx="1" fill="#00c853"></rect></svg></g></g><defs><clipPath id="SvgjsClipPath1005"><rect width="1000" height="1000" x="0" y="0" rx="350" ry="350"></rect></clipPath></defs></svg></g><g id="dark-icon"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><g><g transform="matrix(2.5,0,0,2.5,250,0)"><svg xmlns="http://www.w3.org/2000/svg" width="200" height="400" viewBox="0 0 200 400" fill="none"><rect x="78" y="8" width="44" height="32" rx="4" fill="#00c853" stroke="#00c853" stroke-width="8"></rect><rect x="30" y="38" width="140" height="340" rx="8" fill="none" stroke="#00c853" stroke-width="14"></rect><g fill="#00c853">
+    <rect x="96" y="68" width="8" height="26" rx="1"></rect>
+    <rect x="88" y="77" width="24" height="8" rx="1"></rect>
+  </g><g transform="translate(100, 200) scale(1.6)">
+    <path d="M0,38 
+             C0,38 -38,5 -38,-25 
+             C-38,-48 -20,-60 0,-42 
+             C20,-60 38,-48 38,-25 
+             C38,5 0,38 0,38 Z" fill="#00c853"></path>
+  </g><rect x="88" y="325" width="24" height="8" rx="1" fill="#00c853"></rect></svg></g></g></svg></g></svg>

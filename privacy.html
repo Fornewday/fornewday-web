@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BatLive — Privacy Policy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --accent:   #00ff88;
+      --bg:       #0a0a0f;
+      --bg-2:     #0f0f18;
+      --text:     #ffffff;
+      --text-2:   rgba(255,255,255,0.65);
+      --text-3:   rgba(255,255,255,0.35);
+      --border:   rgba(255,255,255,0.08);
+      --nav-bg:   rgba(10,10,15,0.88);
+    }
+    [data-theme="light"] {
+      --accent:   #00c853;
+      --bg:       #ffffff;
+      --bg-2:     #f4f4f7;
+      --text:     #111118;
+      --text-2:   rgba(17,17,24,0.62);
+      --text-3:   rgba(17,17,24,0.38);
+      --border:   rgba(17,17,24,0.08);
+      --nav-bg:   rgba(255,255,255,0.88);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 40px;
+      background: var(--nav-bg);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-size: 20px; font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--text); text-decoration: none;
+    }
+    .logo .accent { color: var(--accent); }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: inherit; font-size: 13px; font-weight: 600;
+      color: var(--text-2); background: none; border: none;
+      cursor: pointer; text-decoration: none;
+      padding: 7px 14px; border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: color 0.18s, border-color 0.18s;
+    }
+    .back-btn:hover { color: var(--text); border-color: var(--accent); }
+
+    /* CONTENT */
+    main {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 120px 40px 80px;
+    }
+
+    .page-title {
+      font-size: 36px; font-weight: 900;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+    .page-date {
+      font-size: 13px; color: var(--text-3);
+      margin-bottom: 60px;
+    }
+
+    /* lang blocks */
+    .lang-block {
+      margin-bottom: 72px;
+      padding-bottom: 72px;
+      border-bottom: 1px solid var(--border);
+    }
+    .lang-block:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .lang-tag {
+      display: inline-block;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 28px;
+      padding: 4px 10px;
+      border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+      border-radius: 6px;
+    }
+
+    h2 {
+      font-size: 22px; font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    h3 {
+      font-size: 15px; font-weight: 700;
+      color: var(--text);
+      margin: 28px 0 8px;
+    }
+    p {
+      font-size: 15px; color: var(--text-2);
+      margin-bottom: 12px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul {
+      list-style: none;
+      margin: 8px 0 12px;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    ul li {
+      font-size: 15px; color: var(--text-2);
+      padding-left: 16px; position: relative;
+    }
+    ul li::before {
+      content: '–';
+      position: absolute; left: 0;
+      color: var(--text-3);
+    }
+
+    /* footer */
+    footer {
+      text-align: center;
+      padding: 32px 40px;
+      border-top: 1px solid var(--border);
+      font-size: 12px; color: var(--text-3);
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 14px 20px; }
+      main { padding: 100px 20px 60px; }
+      .page-title { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">BAT <span class="accent">LIVE</span></a>
+  <a href="index.html" class="back-btn" onclick="if(document.referrer){history.back();return false;}">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="13" height="13">
+      <path d="M10 3L5 8l5 5"/>
+    </svg>
+    <span>Back</span>
+  </a>
+</nav>
+
+<main>
+  <h1 class="page-title" id="page-title">Privacy Policy</h1>
+  <p class="page-date" id="page-date">Last updated: June 2026</p>
+
+  <!-- ── ENGLISH ── -->
+  <div class="lang-block" data-lang="en">
+    <h2>Privacy Policy — BatLive</h2>
+
+    <h3>1. Controller</h3>
+    <p>Fornewday (Andrey Rodichkin Rodichkin). Contact: fornewday.official@gmail.com</p>
+
+    <h3>2. Data collected</h3>
+    <ul>
+      <li><strong>Email address</strong> — provided during purchase via Stripe.</li>
+      <li><strong>Hardware ID (MachineGuid)</strong> — generated locally on your device to bind the license.</li>
+      <li><strong>Country of purchase</strong> — recorded by the payment processor.</li>
+    </ul>
+
+    <h3>3. Purpose of processing</h3>
+    <ul>
+      <li>License generation and delivery.</li>
+      <li>Activation and online validation (up to once every 7 days).</li>
+      <li>Delivery of critical update notifications.</li>
+    </ul>
+
+    <h3>4. Third-party services</h3>
+    <ul>
+      <li><strong>Stripe</strong> — payment processing and license delivery.</li>
+      <li><strong>Render</strong> — license validation server hosting.</li>
+      <li><strong>Supabase</strong> — license database.</li>
+    </ul>
+    <p>Each third party operates under its own privacy policy. Fornewday does not sell or share your data with any other parties.</p>
+
+    <h3>5. Your rights</h3>
+    <p>You may request access to or deletion of your data by emailing fornewday.official@gmail.com. Please note that deleting your data will permanently invalidate your license.</p>
+
+    <h3>6. Data retention</h3>
+    <p>Data is retained for as long as your license is active. Upon deletion request, all associated data is removed within 30 days.</p>
+  </div>
+
+  <!-- ── ESPAÑOL ── -->
+  <div class="lang-block" data-lang="es">
+    <h2>Política de privacidad — BatLive</h2>
+
+    <h3>1. Responsable del tratamiento</h3>
+    <p>Fornewday (Andrey Rodichkin Rodichkin). Contacto: fornewday.official@gmail.com</p>
+
+    <h3>2. Datos recogidos</h3>
+    <ul>
+      <li><strong>Dirección de email</strong> — facilitada durante la compra a través de Stripe.</li>
+      <li><strong>ID de hardware (MachineGuid)</strong> — generado localmente en tu dispositivo para vincular la licencia.</li>
+      <li><strong>País de compra</strong> — registrado por el procesador de pago.</li>
+    </ul>
+
+    <h3>3. Finalidad del tratamiento</h3>
+    <ul>
+      <li>Generación y entrega de la licencia.</li>
+      <li>Activación y validación en línea (hasta una vez cada 7 días).</li>
+      <li>Envío de notificaciones de actualizaciones críticas.</li>
+    </ul>
+
+    <h3>4. Servicios de terceros</h3>
+    <ul>
+      <li><strong>Stripe</strong> — procesamiento de pagos y entrega de licencias.</li>
+      <li><strong>Render</strong> — alojamiento del servidor de validación de licencias.</li>
+      <li><strong>Supabase</strong> — base de datos de licencias.</li>
+    </ul>
+    <p>Cada tercero opera bajo su propia política de privacidad. Fornewday no vende ni comparte tus datos con ninguna otra parte.</p>
+
+    <h3>5. Tus derechos</h3>
+    <p>Puedes solicitar el acceso o la eliminación de tus datos escribiendo a fornewday.official@gmail.com. Ten en cuenta que la eliminación de tus datos invalidará permanentemente tu licencia.</p>
+
+    <h3>6. Conservación de datos</h3>
+    <p>Los datos se conservan mientras la licencia esté activa. Tras una solicitud de eliminación, todos los datos asociados se borran en un plazo de 30 días.</p>
+  </div>
+
+  <!-- ── РУССКИЙ ── -->
+  <div class="lang-block" data-lang="ru">
+    <h2>Политика конфиденциальности — BatLive</h2>
+
+    <h3>1. Ответственное лицо</h3>
+    <p>Fornewday (Андрей Родичкин Родичкин). Контакт: fornewday.official@gmail.com</p>
+
+    <h3>2. Собираемые данные</h3>
+    <ul>
+      <li><strong>Адрес электронной почты</strong> — предоставляется при покупке через Stripe.</li>
+      <li><strong>Идентификатор оборудования (MachineGuid)</strong> — формируется локально на вашем устройстве для привязки лицензии.</li>
+      <li><strong>Страна покупки</strong> — фиксируется платёжным сервисом.</li>
+    </ul>
+
+    <h3>3. Цели обработки</h3>
+    <ul>
+      <li>Формирование и доставка лицензии.</li>
+      <li>Активация и онлайн-проверка (не чаще одного раза в 7 дней).</li>
+      <li>Уведомления о критических обновлениях.</li>
+    </ul>
+
+    <h3>4. Сторонние сервисы</h3>
+    <ul>
+      <li><strong>Stripe</strong> — обработка платежей и доставка лицензий.</li>
+      <li><strong>Render</strong> — хостинг сервера проверки лицензий.</li>
+      <li><strong>Supabase</strong> — база данных лицензий.</li>
+    </ul>
+    <p>Каждый сторонний сервис работает в соответствии со своей политикой конфиденциальности. Fornewday не продаёт и не передаёт ваши данные третьим лицам.</p>
+
+    <h3>5. Ваши права</h3>
+    <p>Вы можете запросить доступ к своим данным или их удаление, написав на fornewday.official@gmail.com. Обратите внимание: удаление данных приведёт к безвозвратной деактивации лицензии.</p>
+
+    <h3>6. Хранение данных</h3>
+    <p>Данные хранятся в течение всего срока действия лицензии. После получения запроса на удаление все связанные данные уничтожаются в течение 30 дней.</p>
+  </div>
+
+</main>
+
+<footer>
+  © 2026 Fornewday
+</footer>
+
+<script src="legal.js"></script>
+</body>
+</html>
