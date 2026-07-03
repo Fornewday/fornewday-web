@@ -18,7 +18,7 @@
 const T = {
   es: {
     code: 'ES',
-    h1: 'Cuida tu portátil<br><span class="accent">Protege su batería</span>',
+    h1: 'Cuida tu portatil<br><span class="accent">Protege su batería</span>',
     statusText: 'Monitorización · 67%',
     sub: 'Ralentiza el desgaste y preserva la capacidad original a largo plazo',
     btn: 'Comprar BatLive · 4,99 €',
