@@ -66,6 +66,10 @@ function applyCheckoutLang() {
   const lang = localStorage.getItem('batlive-lang') || 'en';
   const c = CO[lang] || CO.en;
 
+  const codes = { en: 'EN', es: 'ES', ru: 'RU' };
+  const cur = document.getElementById('lang-current');
+  if (cur) cur.textContent = codes[lang] || 'EN';
+
   const set = (id, val) => {
     const el = document.getElementById(id);
     if (el) el.textContent = val;

@@ -54,7 +54,7 @@ const T = {
     f4Text: 'Sin sonido, los avisos visuales se mantienen',
     f5Title: 'Control de modos',
     f5Text: 'Tema de interfaz | Arranque automático y trabajo en segundo plano',
-    f6Title: '7 idiomas de interfaz',
+    f6Title: 'Interfaz de la app en 7 idiomas',
     f6Text: 'EN · ES · DE · FR · IT · PT · RU',
 
     footerCopy: '© 2026 Fornewday',
@@ -62,17 +62,18 @@ const T = {
     footerPrivacy: 'Política de privacidad',
     footerTerms: 'Términos de uso',
 
-    ssH2: 'Controla el rendimiento de la batería de tu portátil',
-    ssSub: 'BatLive supervisa el nivel de carga en tiempo real y te avisa cuándo conectar o desconectar el cargador',
+    ssEyebrow: 'Carga',
+    ssH2: 'Controla el nivel de carga de la batería',
+    ssSub: 'BatLive supervisa y te avisa cuándo debes conectar o desconectar el cargador',
     ss1Cap: 'Batería baja · conectar',
-    ss2Cap: 'Uso normal · 31%',
+    ss2Cap: 'Nivel óptimo · 31%',
     ss3Cap: 'Carga alta · desconectar',
-    ssDiagTitle: 'Estados de salud de la batería',
-    ssDiagText: 'BatLive analiza los parámetros del sistema para mostrar de forma clara el estado actual de la batería:<br>Buena | Regular | Degradada | Estado crítico',
+    stateEyebrow: 'Estado y ajustes',
+    stateDiagTitle: 'Estados de salud de la batería',
+    stateDiagText: 'BatLive analiza los parámetros del sistema para mostrar el estado actual de la batería: Buena <span class="dot-sep"></span> Regular <span class="dot-sep"></span> Degradada <span class="dot-sep"></span> Estado crítico',
 
     priceEyebrow: 'Precio',
     priceH2: 'Pago único — para siempre',
-    priceSub: 'Sin suscripciones | Sin renovaciones',
     perkSub: 'Sin suscripciones ni renovaciones',
     perk1: 'Licencia de por vida para 1 dispositivo',
     perkRefund: 'Garantía de devolución de 14 días',
@@ -162,7 +163,7 @@ const T = {
     f4Text: 'Sound off, popup alerts stay active',
     f5Title: 'Mode settings',
     f5Text: 'Interface theme | Auto-start | Background operation',
-    f6Title: '7 interface languages',
+    f6Title: 'App interface in 7 languages',
     f6Text: 'EN · ES · DE · FR · IT · PT · RU',
 
     footerCopy: '© 2026 Fornewday',
@@ -170,17 +171,17 @@ const T = {
     footerPrivacy: 'Privacy Policy',
     footerTerms: 'Terms of Use',
 
-    ssH2: 'Monitor your laptop battery performance',
-    ssSub: 'BatLive monitors the charge level in real time and alerts you when to plug in or unplug the charger',
+    ssEyebrow: 'Charge',
+    ssH2: 'Monitors the battery charge level',
+    ssSub: 'BatLive monitors and notifies you when it\'s time to plug in or unplug the charger',
     ss1Cap: 'Low battery · connect',
-    ss2Cap: 'Normal use · 31%',
+    ss2Cap: 'Optimal level · 31%',
     ss3Cap: 'High charge · disconnect',
-    ssDiagTitle: 'Battery health states',
-    ssDiagText: 'BatLive analyzes system parameters to clearly display current battery status:<br>Good | Normal | Degraded | Critical',
-
+    stateEyebrow: 'Status & Settings',
+    stateDiagTitle: 'Battery health states',
+    stateDiagText: 'BatLive analyzes the system and displays battery status: Good <span class="dot-sep"></span> Normal <span class="dot-sep"></span> Degraded <span class="dot-sep"></span> Critical',
     priceEyebrow: 'Pricing',
     priceH2: 'Pay once — yours forever',
-    priceSub: 'No subscription | No renewals',
     perkSub: 'No subscription or renewals',
     perk1: 'Lifetime license for 1 device',
     perkRefund: '14-day money-back guarantee',
@@ -270,7 +271,7 @@ const T = {
     f4Text: 'Отключение звука с сохранением всплывающих окон',
     f5Title: 'Управление режимами',
     f5Text: 'Тема интерфейса | Автозапуск и работа в фоне',
-    f6Title: '7 языков интерфейса',
+    f6Title: 'Интерфейс приложения на 7 языках',
     f6Text: 'EN · ES · DE · FR · IT · PT · RU',
 
     footerCopy: '© 2026 Fornewday',
@@ -278,17 +279,17 @@ const T = {
     footerPrivacy: 'Политика конфиденциальности',
     footerTerms: 'Условия использования',
 
-    ssH2: 'Контролируйте состояние батареи ноутбука',
-    ssSub: 'BatLive отслеживает состояние аккумулятора и уведомляет, когда нужно подключить или отключить зарядное устройство',
+    ssEyebrow: 'Заряд',
+    ssH2: 'Контролирует уровень заряда батареи',
+    ssSub: 'BatLive отслеживает и уведомляет, когда нужно подключить или отключить зарядное устройство',
     ss1Cap: 'Низкий заряд · подключить',
-    ss2Cap: 'Обычная работа · 31%',
+    ss2Cap: 'Оптимальный уровень · 31%',
     ss3Cap: 'Высокий заряд · отключить',
-    ssDiagTitle: 'Состояния здоровья аккумулятора',
-    ssDiagText: 'BatLive анализирует системные параметры, чтобы наглядно отображать текущее состояние аккумулятора:<br>Хорошее | Среднее | Изношен | Критическое состояние',
-
+    stateEyebrow: 'Состояние и настройки',
+    stateDiagTitle: 'Состояния здоровья аккумулятора',
+    stateDiagText: 'BatLive анализирует систему и показывает состояние аккумулятора: Хорошее <span class="dot-sep"></span> Среднее <span class="dot-sep"></span> Изношен <span class="dot-sep"></span> Критическое состояние',
     priceEyebrow: 'Цена',
     priceH2: 'Разовая покупка — навсегда',
-    priceSub: 'Без подписки | Без продления',
     perkSub: 'Без подписки и продлений',
     perk1: 'Бессрочная лицензия на 1 устройство',
     perkRefund: '14 дней гарантии возврата денег',
@@ -388,17 +389,18 @@ function setLang(lang) {
   set('footer-privacy', t.footerPrivacy);
   set('footer-terms',   t.footerTerms);
 
-  set('ss-h2',  t.ssH2);
-  set('ss-sub', t.ssSub);
+  set('ss-eyebrow', t.ssEyebrow);
+  set('ss-h2',      t.ssH2);
+  set('ss-sub',     t.ssSub);
   set('ss1-cap', t.ss1Cap);
   set('ss2-cap', t.ss2Cap);
   set('ss3-cap', t.ss3Cap);
-  set('ss-diag-title', t.ssDiagTitle);
-  set('ss-diag-text',  t.ssDiagText, true);
+  set('state-eyebrow',    t.stateEyebrow);
+  set('state-diag-title', t.stateDiagTitle);
+  set('state-diag-text',  t.stateDiagText, true);
 
   set('price-eyebrow',  t.priceEyebrow);
   set('price-h2',       t.priceH2);
-  set('price-sub',      t.priceSub);
   set('perk-sub', t.perkSub);
   set('perk1', t.perk1);
   set('perk-refund', t.perkRefund);

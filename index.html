@@ -1,28 +1,557 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- ════════════════════════════════════════════════════════════════
+     BATLIVE — INDEX.HTML
+
+     ÍNDICE
+     ────────────────────────────────────────────────────────────────
+     1.  NAVBAR
+     2.  HERO
+     3.  WHAT (pillars)
+     4.  STATS
+     5.  FEATURES
+     6.  SCREENSHOTS
+     7.  STATE (estado y ajustes)
+     8.  PRICING
+     9.  FAQ
+     10. CONTACT
+     11. FOOTER
+     12. MODAL SOPORTE
+     ════════════════════════════════════════════════════════════════ -->
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BatLive</title>
-<style>
-  body{margin:0;font-family:Arial,sans-serif;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;min-height:100vh;background:#fff;color:#111;}
-  .badge{background:#00c853;color:#fff;padding:8px 20px;border-radius:20px;
-  font-size:14px;font-weight:bold;margin-bottom:32px;}
-  h1{font-size:48px;margin:0 0 12px;}
-  .sub{font-size:18px;color:#555;margin-bottom:32px;}
-  .soon{font-size:16px;font-weight:bold;margin-bottom:8px;}
-  .thx{font-size:14px;color:#888;}
-  .foot{position:fixed;bottom:20px;font-size:13px;color:#aaa;}
-  .foot a{color:#00c853;text-decoration:none;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BatLive — Protect your laptop battery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="manifest" href="img/site.webmanifest">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="badge">COMING SOON</div>
-<h1>BatLive</h1>
-<p class="sub">Real-time battery monitoring for Windows laptops</p>
-<p class="soon">Launching soon</p>
-<p class="thx">Thank you for your patience</p>
-<p class="foot">&copy; 2026 <a href="https://fornewday.com">Fornewday</a> · Built by Fornewday</p>
+
+<!-- ── 1. NAVBAR ──────────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-inner">
+  <div class="logo">BAT <span class="accent">LIVE</span></div>
+  <div class="nav-right">
+    <div class="lang-dropdown">
+      <button class="lang-btn" id="lang-btn" onclick="toggleLangMenu(event)" aria-label="Idioma">
+        <span id="lang-current">EN</span>
+        <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M7 10l5 5 5-5z"/></svg>
+      </button>
+      <div class="lang-menu" id="lang-menu">
+        <button onclick="setLang('en')" id="opt-en">English</button>
+        <button onclick="setLang('es')" id="opt-es">Español</button>
+        <button onclick="setLang('ru')" id="opt-ru">Русский</button>
+      </div>
+    </div>
+    <button class="theme-btn" onclick="toggleTheme()" aria-label="Cambiar tema">
+      <!-- luna -->
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor" width="17" height="17">
+        <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.4 5.4 0 0 1-4.4 2.26 5.4 5.4 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/>
+      </svg>
+      <!-- sol -->
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="17" height="17">
+        <circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/>
+        <line x1="12" y1="2"  x2="12" y2="5"/>
+        <line x1="12" y1="19" x2="12" y2="22"/>
+        <line x1="2"  y1="12" x2="5"  y2="12"/>
+        <line x1="19" y1="12" x2="22" y2="12"/>
+        <line x1="4.2"  y1="4.2"  x2="6.3"  y2="6.3"/>
+        <line x1="17.7" y1="17.7" x2="19.8" y2="19.8"/>
+        <line x1="4.2"  y1="19.8" x2="6.3"  y2="17.7"/>
+        <line x1="17.7" y1="6.3"  x2="19.8" y2="4.2"/>
+      </svg>
+    </button>
+  </div>
+  </div>
+</nav>
+
+<!-- ── 2. HERO ────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1 id="hero-h1">
+        Extend your laptop's<br>
+        <span class="accent">battery life</span>
+      </h1>
+
+      <!-- barra de estado animada — firma del diseño -->
+      <div class="status-bar" aria-hidden="true">
+        <span class="status-dot"></span>
+        <span class="status-text" id="status-text">Monitoring · 67%</span>
+        <span class="status-charge">
+          <svg viewBox="0 0 16 10" fill="none" width="18">
+            <rect x="0.5" y="0.5" width="13" height="9" rx="1.5" stroke="currentColor" stroke-opacity="0.5"/>
+            <rect x="13.5" y="3" width="2" height="4" rx="0.5" fill="currentColor" fill-opacity="0.4"/>
+            <rect x="2" y="2" width="8" height="6" rx="0.5" fill="currentColor"/>
+          </svg>
+        </span>
+      </div>
+
+      <p class="hero-sub" id="hero-sub">Reduces wear and preserves capacity for years to come</p>
+
+      <div class="cta-block">
+        <a href="checkout.html" class="btn-primary" id="hero-btn">
+          <span id="hero-btn-text">Buy BatLive · €4.99</span>
+        </a>
+        <p class="cta-note" id="hero-note">One-time payment · No subscription</p>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="app-frame">
+        <img src="./img/app-screenshot.png" alt="BatLive"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="img-placeholder" style="display:none">
+          <svg viewBox="0 0 60 80" fill="none" width="60" opacity="0.3">
+            <rect x="4" y="2" width="52" height="76" rx="6" stroke="currentColor" stroke-width="2"/>
+            <rect x="12" y="10" width="36" height="8" rx="2" fill="currentColor" opacity="0.3"/>
+            <rect x="12" y="24" width="36" height="4" rx="2" fill="currentColor" opacity="0.2"/>
+            <rect x="12" y="32" width="24" height="4" rx="2" fill="currentColor" opacity="0.2"/>
+          </svg>
+          <span>app-screenshot.png</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 3. WHAT (pillars) ──────────────────────────────────── -->
+<section class="what reveal">
+  <div class="container">
+    <div class="what-header">
+      <h2 id="what-h2">Three principles of protection</h2>
+      <p class="section-sub" id="what-sub">Runs in the background — you just use your laptop</p>
+    </div>
+    <div class="pillars">
+
+      <div class="pillar reveal-child">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" width="26" height="26">
+            <circle cx="12" cy="12" r="9"/>
+            <polyline points="12 7 12 12 15 15"/>
+          </svg>
+        </div>
+        <h3 id="p1-title">Background monitoring</h3>
+        <p id="p1-text">Lives silently in the system tray, no open window required, minimal resource usage</p>
+      </div>
+
+      <div class="pillar reveal-child">
+        <div class="pillar-icon pillar-icon--accent">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" width="26" height="26">
+            <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/>
+          </svg>
+        </div>
+        <h3 id="p2-title">Battery protection</h3>
+        <p id="p2-text">Keeps charge in the safe range — cell degradation slows down significantly</p>
+      </div>
+
+      <div class="pillar reveal-child">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" width="26" height="26">
+            <line x1="4" y1="6" x2="20" y2="6"/>
+            <line x1="4" y1="12" x2="20" y2="12"/>
+            <line x1="4" y1="18" x2="20" y2="18"/>
+            <circle cx="9" cy="6" r="2.5" fill="var(--bg-2)"/>
+            <circle cx="15" cy="12" r="2.5" fill="var(--bg-2)"/>
+            <circle cx="7" cy="18" r="2.5" fill="var(--bg-2)"/>
+          </svg>
+        </div>
+        <h3 id="p3-title">Your rules</h3>
+        <p id="p3-text">Set a minimum and maximum threshold — the app alerts you when it's time to act</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 4. STATS ───────────────────────────────────────────── -->
+<section class="stats reveal">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat reveal-child">
+        <div class="stat-num">+50<span class="stat-unit">%*</span></div>
+        <div class="stat-label" id="stat1-label">capacity preserved</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat reveal-child">
+        <div class="stat-num">0<span class="stat-unit" id="stat2-unit"> €/month</span></div>
+        <div class="stat-label" id="stat2-label">no subscriptions</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat reveal-child">
+        <div class="stat-num">&lt;1<span class="stat-unit"> min</span></div>
+        <div class="stat-label" id="stat3-label">setup and launch</div>
+      </div>
+    </div>
+    <p class="stats-footnote" id="stats-footnote">* Keeping charge between 20–80% per Battery University BU-808</p>
+  </div>
+</section>
+
+<!-- ── 5. FEATURES ────────────────────────────────────────── -->
+<section class="features reveal">
+  <div class="container">
+    <div class="features-header">
+      <p class="eyebrow" id="feat-eyebrow">Features</p>
+      <h2 id="feat-h2">Everything you need — nothing you don't</h2>
+    </div>
+
+    <ul class="feat-grid">
+      <li class="feat-item reveal-child">
+        <span class="feat-icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" width="18" height="18">
+            <path d="M3 10h14M3 5h14M3 15h8"/>
+          </svg>
+        </span>
+        <div>
+          <strong id="f1-title">Operating parameters</strong>
+          <p id="f1-text">Minimum and maximum — tailored to how you use your laptop</p>
+        </div>
+      </li>
+      <li class="feat-item reveal-child">
+        <span class="feat-icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" width="18" height="18">
+            <path d="M10 2a6 6 0 0 0-6 6c0 4 6 10 6 10s6-6 6-10a6 6 0 0 0-6-6z"/>
+            <circle cx="10" cy="8" r="2" fill="currentColor" stroke="none"/>
+          </svg>
+        </span>
+        <div>
+          <strong id="f2-title">Instant alerts</strong>
+          <p id="f2-text">Audio signal and popup window when a threshold is reached</p>
+        </div>
+      </li>
+      <li class="feat-item reveal-child">
+        <span class="feat-icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" width="18" height="18">
+            <rect x="2" y="6" width="14" height="9" rx="1.5"/>
+            <path d="M16 9h2v3h-2"/>
+            <path d="M6 6V4a2 2 0 0 1 4 0v2"/>
+          </svg>
+        </span>
+        <div>
+          <strong id="f3-title">Battery diagnostics</strong>
+          <p id="f3-text">Real battery wear and cycle count monitoring</p>
+        </div>
+      </li>
+      <li class="feat-item reveal-child">
+        <span class="feat-icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" width="18" height="18">
+            <path d="M3 3h14v10H3z" rx="1"/>
+            <line x1="6" y1="17" x2="14" y2="17"/>
+            <line x1="10" y1="13" x2="10" y2="17"/>
+          </svg>
+        </span>
+        <div>
+          <strong id="f4-title">Silent mode</strong>
+          <p id="f4-text">Sound off, popup alerts stay active</p>
+        </div>
+      </li>
+      <li class="feat-item reveal-child">
+        <span class="feat-icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" width="18" height="18">
+            <circle cx="10" cy="10" r="8"/>
+            <path d="M10 2a15.3 15.3 0 0 1 4 8 15.3 15.3 0 0 1-4 8 15.3 15.3 0 0 1-4-8 15.3 15.3 0 0 1 4-8z"/>
+            <path d="M2 10h16"/>
+          </svg>
+        </span>
+        <div>
+          <strong id="f6-title">App interface in 7 languages</strong>
+          <p id="f6-text">EN · ES · DE · FR · IT · PT · RU</p>
+        </div>
+      </li>
+      <li class="feat-item reveal-child">
+        <span class="feat-icon">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" width="18" height="18">
+            <rect x="2" y="6" width="16" height="8" rx="4"/>
+            <circle cx="14" cy="10" r="2" fill="currentColor"/>
+          </svg>
+        </span>
+        <div>
+          <strong id="f5-title">Mode settings</strong>
+          <p id="f5-text">Interface theme | Auto-start | Background operation</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ── 6. SCREENSHOTS ─────────────────────────────────────── -->
+<section class="screenshots reveal">
+  <div class="container">
+    <div class="screenshots-header">
+      <p class="eyebrow" id="ss-eyebrow">Charge</p>
+      <h2 id="ss-h2">Monitors the battery charge level</h2>
+      <p class="section-sub" id="ss-sub">BatLive monitors and notifies you when it's time to plug in or unplug the charger.</p>
+    </div>
+
+    <!-- 3 capturas verticales -->
+    <div class="ss-grid-top">
+      <div class="ss-item reveal-child">
+        <img src="./img/app-low.png" alt="Low battery"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="ss-placeholder">app-low.png</div>
+        <p class="ss-caption" id="ss1-cap">Low battery · connect</p>
+      </div>
+      <div class="ss-item reveal-child">
+        <img src="./img/app-discharge.png" alt="Discharging"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="ss-placeholder">app-discharge.png</div>
+        <p class="ss-caption" id="ss2-cap">Normal use · 31%</p>
+      </div>
+      <div class="ss-item reveal-child">
+        <img src="./img/app-high.png" alt="High charge"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="ss-placeholder">app-high.png</div>
+        <p class="ss-caption" id="ss3-cap">High charge · disconnect</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 7. STATE (estado y ajustes) ────────────────────────── -->
+<section class="state reveal">
+  <div class="container">
+    <div class="state-header">
+      <p class="eyebrow" id="state-eyebrow">Status & Settings</p>
+    </div>
+
+    <div class="state-grid">
+      <img class="state-shot state-shot--left  reveal-child" src="./img/app-battery.png"     alt="Battery health · 96%" onerror="this.style.display='none'">
+      <img class="state-shot state-shot--right reveal-child" src="./img/app-settings-ok.png" alt="Settings · 20-80"     onerror="this.style.display='none'">
+    </div>
+
+    <div class="state-diag reveal-child">
+      <div class="state-diag-icon">
+        <svg viewBox="0 0 200 400" fill="none" width="42" height="42">
+          <rect x="78" y="8" width="44" height="32" rx="4" fill="currentColor"/>
+          <rect x="30" y="38" width="140" height="340" rx="8" fill="none" stroke="currentColor" stroke-width="14"/>
+          <g fill="currentColor">
+            <rect x="96" y="68" width="8" height="26" rx="1"/>
+            <rect x="88" y="77" width="24" height="8" rx="1"/>
+          </g>
+          <g transform="translate(100, 200) scale(1.6)">
+            <path d="M0,38 C0,38 -38,5 -38,-25 C-38,-48 -20,-60 0,-42 C20,-60 38,-48 38,-25 C38,5 0,38 0,38 Z" fill="currentColor"/>
+          </g>
+          <rect x="88" y="325" width="24" height="8" rx="1" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="state-diag-text">
+        <h3 id="state-diag-title">Battery wear diagnostics and cycle monitoring</h3>
+        <p id="state-diag-text">BatLive uses system data on charge cycles and battery capacity to accurately evaluate its real condition. The application analyzes the level of battery wear and clearly displays its current health status: from «Good» and «Fair» to «Degraded» or «Critical».</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 8. PRICING ─────────────────────────────────────────── -->
+<section class="pricing reveal">
+  <div class="container">
+    <div class="pricing-card">
+      <div class="pricing-left">
+        <p class="eyebrow" id="price-eyebrow">Pricing</p>
+        <h2 id="price-h2">One price. Forever.</h2>
+        <ul class="price-perks">
+          <li id="perk-sub">No subscription or renewals</li>
+          <li id="perk1">Lifetime license for 1 device</li>
+          <li id="perk-refund">14-day money-back guarantee</li>
+          <li id="perk3">Email support</li>
+        </ul>
+        <div class="price-extra-block">
+          <div class="price-extra-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" width="26" height="26">
+              <path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <p class="price-extra" id="price-extra">Receive your license key instantly by email after payment</p>
+        </div>
+      </div>
+      <div class="pricing-right">
+        <div class="price-amount">
+          <span class="price-num" id="price-num">4,99</span>
+          <span class="price-currency">€</span>
+        </div>
+        <a href="checkout.html" class="btn-primary" id="price-btn">
+          <span id="price-btn-text">Buy BatLive</span>
+        </a>
+        <p class="price-secure" id="price-secure">Secure payment via Stripe</p>
+        <div class="price-methods" aria-label="Payment methods">
+          <img src="./img/pay-visa.png" alt="Visa">
+          <img src="./img/pay-mastercard.png" alt="Mastercard">
+          <img src="./img/pay-applepay.png" alt="Apple Pay">
+          <img src="./img/pay-googlepay.png" alt="Google Pay">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 9. FAQ ─────────────────────────────────────────────── -->
+<section class="faq reveal">
+  <div class="container">
+    <div class="faq-header">
+      <p class="eyebrow" id="faq-eyebrow">FAQ</p>
+      <h2 id="faq-h2">Common questions</h2>
+    </div>
+    <div class="faq-list">
+
+      <!-- Columna izquierda (valor y producto) -->
+
+      <div class="faq-item reveal-child">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span id="fq3">How does BatLive reduce battery wear?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="faq-a"><p id="fa3">BatLive helps reduce battery wear by reminding you when to plug in or unplug your charger. Battery wear increases when the battery stays at 100% for extended periods (high-voltage stress) or drops below 20% (deep discharge). BatLive monitors these conditions and alerts you to keep your battery within the optimal 20–80% charge range, where battery wear is lower.</p></div>
+      </div>
+
+      <div class="faq-item reveal-child">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span id="fq1">Does BatLive work on Mac or Linux?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="faq-a"><p id="fa1">No. BatLive is only available for Windows 10 and Windows 11. There are currently no versions for Mac or Linux.</p></div>
+      </div>
+
+      <div class="faq-item reveal-child">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span id="fq2">Does BatLive work on desktop PCs?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="faq-a"><p id="fa2">No. BatLive is designed exclusively for laptops.</p></div>
+      </div>
+
+      <div class="faq-item reveal-child">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span id="fq5">Does BatLive work without an internet connection?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="faq-a"><p id="fa5">Yes. You only need an internet connection once to activate your license. After that, BatLive runs locally and continues protecting your battery even when you're offline. Your license is automatically revalidated in the background every 7 days.</p></div>
+      </div>
+
+      <div class="faq-item reveal-child">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span id="fq4">Does BatLive slow down my laptop?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="faq-a"><p id="fa4">No. BatLive uses less than 20 MB of RAM and checks your battery once every second. The impact on performance is negligible.</p></div>
+      </div>
+
+      <!-- Columna derecha (logística y compra) -->
+
+      <div class="faq-item reveal-child">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span id="fq9">What do I receive after purchase?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="faq-a"><p id="fa9">You'll receive your license key and download link by email. Simply download BatLive, install it, enter your license key, and you're ready to go!</p></div>
+      </div>
+
+      <div class="faq-item reveal-child">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span id="fq7">Can I use one license on multiple devices?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="faq-a"><p id="fa7">No. Each license is linked to a single device (HWID). A separate license key is required for each laptop.</p></div>
+      </div>
+
+      <div class="faq-item reveal-child">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span id="fq8">What happens if I reinstall Windows?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="faq-a"><p id="fa8">If you reinstall Windows on the same laptop, your license will be automatically reactivated because it is linked to your laptop's hardware identifier (HWID). You only need to enter your license key again.</p></div>
+      </div>
+
+      <div class="faq-item reveal-child">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span id="fq10">Do you offer refunds?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="faq-a"><p id="fa10">BatLive is a digital product delivered immediately after purchase, so the 14-day right of withdrawal is waived during checkout. However, if you experience a technical issue, contact us within 14 days of purchase, and we'll review your case individually.</p></div>
+      </div>
+
+      <div class="faq-item reveal-child">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span id="fq6">What data does BatLive collect?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="faq-a"><p id="fa6">BatLive respects your privacy. It only uses your hardware identifier (HWID) to validate your license and your battery's technical data to display your battery history. We do not collect personal data, track your activity, or share any information with third parties.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 10. CONTACT ─────────────────────────────────────────── -->
+<section class="contact reveal">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" width="26" height="26">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </div>
+      <div class="contact-text">
+        <h2 id="contact-h2">Need help?</h2>
+        <p id="contact-sub">Questions about your license, installation issues or anything else — write to us directly.</p>
+      </div>
+      <a href="#" class="btn-primary" id="contact-btn" onclick="openModal(); return false;">
+        Contact support
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── 11. FOOTER ─────────────────────────────────────────── -->
+<footer>
+  <div class="container footer-inner">
+    <div class="logo">BAT <span class="accent">LIVE</span></div>
+    <p class="footer-copy" id="footer-copy">© 2026 Fornewday</p>
+    <div class="footer-links">
+      <a href="privacy.html" id="footer-privacy">Privacy Policy</a>
+      <span class="footer-sep">·</span>
+      <a href="terms.html" id="footer-terms">Terms of Use</a>
+    </div>
+    <p class="footer-right" id="footer-right">Windows 10 / 11</p>
+  </div>
+</footer>
+
+<!-- ── 12. MODAL SOPORTE ──────────────────────────────────────── -->
+<div class="modal-overlay" id="modal-support">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="20" height="20">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <h3 id="modal-title">Contact support</h3>
+    <form id="support-form" action="https://formspree.io/f/mzdlaqlr" method="POST">
+      <label id="modal-label-email">Email</label>
+      <input type="email" name="email" required id="modal-input-email" placeholder="you@example.com">
+      <label id="modal-label-type">Type</label>
+      <select name="type" required id="modal-select-type">
+        <option value="License issue" id="modal-opt-license">License issue</option>
+        <option value="Installation problem" id="modal-opt-install">Installation problem</option>
+        <option value="Refund request" id="modal-opt-refund">Refund request</option>
+        <option value="Other" id="modal-opt-other">Other</option>
+      </select>
+      <label id="modal-label-msg">Message</label>
+      <textarea name="message" rows="5" required id="modal-textarea" placeholder=""></textarea>
+      <button type="submit" class="btn-primary" id="modal-submit">Send</button>
+    </form>
+    <p class="modal-status" id="modal-status"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
