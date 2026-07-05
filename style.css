@@ -248,6 +248,7 @@ nav .nav-right {
   max-height: 560px; width: auto; max-width: 100%;
   position: relative; z-index: 1;
   border-radius: 8px;
+  border: 1px solid var(--border);
 }
 
 .img-placeholder {
