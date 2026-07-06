@@ -119,9 +119,9 @@ function goToStripe() {
   };
   localStorage.setItem('batlive-consent', JSON.stringify(log));
 
-  // Payment Link de prueba (cambiar a sk_live_ cuando esté listo)
+  // Payment Link REAL (modo live)
   // client_reference_id = idioma → lo usa el webhook para enviar email en ese idioma
-  const STRIPE_LINK = 'https://buy.stripe.com/test_fZu8wR7Z6gPV5KBfaQ8og00';
+  const STRIPE_LINK = 'https://buy.stripe.com/3cI14m9gN8WTcDEb8qgIo00';
   window.location.href = STRIPE_LINK + '?client_reference_id=' + lang;
 }
 
