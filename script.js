@@ -81,7 +81,7 @@ const T = {
     priceBtnText: 'Comprar BatLive',
     priceNum: '4,99',
     priceSecure: 'Pago seguro mediante Stripe',
-    priceExtra: 'Recibe tu clave de licencia al instante por email tras el pago',
+    priceExtra: 'Recibirás licencia y descarga de BatLive al instante por email',
 
     faqEyebrow: 'FAQ',
     faqH2: 'Preguntas frecuentes',
@@ -189,7 +189,7 @@ const T = {
     priceBtnText: 'Buy BatLive',
     priceNum: '4.99',
     priceSecure: 'Secure payment powered by Stripe',
-    priceExtra: 'Instant license key by email after purchase',
+    priceExtra: 'License and BatLive download link by email instantly',
 
     faqEyebrow: 'FAQ',
     faqH2: 'Common questions',
@@ -297,7 +297,7 @@ const T = {
     priceBtnText: 'Купить BatLive',
     priceNum: '4,99',
     priceSecure: 'Безопасная оплата через Stripe',
-    priceExtra: 'Лицензионный ключ придёт на email сразу после оплаты',
+    priceExtra: 'Лицензионный ключ и ссылка на скачивание BatLive придут на email',
 
     faqEyebrow: 'FAQ',
     faqH2: 'Частые вопросы',

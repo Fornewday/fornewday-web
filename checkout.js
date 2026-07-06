@@ -17,11 +17,10 @@ const CO = {
   en: {
     eyebrow: 'Order summary',
     h1: 'BatLive — Lifetime License',
-    sub: 'One-time payment, no subscription, instant delivery by email.',
-    inc1: 'Lifetime license for 1 device',
-    inc2: 'Instant license key by email',
-    inc3: 'Email support included',
-    inc4: 'Windows 10 / 11',
+    sub: 'One-time payment, no subscription, instant delivery by email',
+    inc1: 'License key for 1 device',
+    inc2: 'BatLive download link',
+    inc3: 'Email support',
     priceNote: 'One-time payment',
     consent: 'I agree that the digital product is delivered immediately upon payment and I expressly waive my 14-day right of withdrawal.',
     termsLink: 'Read full terms',
@@ -32,11 +31,10 @@ const CO = {
   es: {
     eyebrow: 'Resumen del pedido',
     h1: 'BatLive — Licencia de por vida',
-    sub: 'Pago único, sin suscripción, entrega inmediata por email.',
-    inc1: 'Licencia de por vida para 1 dispositivo',
-    inc2: 'Clave de licencia al instante por email',
-    inc3: 'Soporte por correo electrónico incluido',
-    inc4: 'Windows 10 / 11',
+    sub: 'Pago único, sin suscripción, entrega inmediata por email',
+    inc1: 'Clave de licencia para 1 dispositivo',
+    inc2: 'Enlace de descarga de BatLive',
+    inc3: 'Soporte por correo electrónico',
     priceNote: 'Pago único',
     consent: 'Acepto que el producto digital se entrega inmediatamente tras el pago y renuncio expresamente a mi derecho de desistimiento de 14 días.',
     termsLink: 'Leer términos completos',
@@ -47,11 +45,10 @@ const CO = {
   ru: {
     eyebrow: 'Детали покупки',
     h1: 'BatLive — Бессрочная лицензия',
-    sub: 'Разовая оплата, без подписки, мгновенная доставка по email.',
-    inc1: 'Бессрочная лицензия на 1 устройство',
-    inc2: 'Лицензионный ключ мгновенно по email',
-    inc3: 'Поддержка по email включена',
-    inc4: 'Windows 10 / 11',
+    sub: 'Разовая оплата, без подписки, мгновенная доставка по email',
+    inc1: 'Лицензионный ключ на 1 устройство',
+    inc2: 'Ссылка на скачивание BatLive',
+    inc3: 'Поддержка по электронной почте',
     priceNote: 'Разовая оплата',
     consent: 'Я согласен, что цифровой продукт доставляется немедленно после оплаты, и я отказываюсь от своего 14-дневного права на возврат.',
     termsLink: 'Читать полные условия',
@@ -81,7 +78,6 @@ function applyCheckoutLang() {
   set('co-inc1', c.inc1);
   set('co-inc2', c.inc2);
   set('co-inc3', c.inc3);
-  set('co-inc4', c.inc4);
   set('co-price-note', c.priceNote);
   set('co-terms-link', c.termsLink);
   set('co-pay-text', c.payText);
