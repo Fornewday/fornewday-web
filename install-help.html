@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BatLive — Installation Guide</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --accent:   #00ff88;
+      --bg:       #0a0a0f;
+      --bg-2:     #0f0f18;
+      --text:     #ffffff;
+      --text-2:   rgba(255,255,255,0.65);
+      --text-3:   rgba(255,255,255,0.35);
+      --border:   rgba(255,255,255,0.08);
+      --nav-bg:   rgba(10,10,15,0.88);
+    }
+    [data-theme="light"] {
+      --accent:   #00c853;
+      --bg:       #ffffff;
+      --bg-2:     #f4f4f7;
+      --text:     #111118;
+      --text-2:   rgba(17,17,24,0.62);
+      --text-3:   rgba(17,17,24,0.38);
+      --border:   rgba(17,17,24,0.08);
+      --nav-bg:   rgba(255,255,255,0.88);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 40px;
+      background: var(--nav-bg);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-size: 20px; font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--text); text-decoration: none;
+    }
+    .logo .accent { color: var(--accent); }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: inherit; font-size: 13px; font-weight: 600;
+      color: var(--text-2); background: none; border: none;
+      cursor: pointer; text-decoration: none;
+      padding: 7px 14px; border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: color 0.18s, border-color 0.18s;
+    }
+    .back-btn:hover { color: var(--text); border-color: var(--accent); }
+
+    main {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 120px 40px 80px;
+    }
+
+    .page-title {
+      font-size: 36px; font-weight: 900;
+      letter-spacing: -0.03em;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .step {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .step:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .step-text {
+      font-size: 15px;
+      color: var(--text-2);
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    .step-img-wrap {
+      text-align: center;
+    }
+    .step-img {
+      max-width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      display: inline-block;
+    }
+
+    .lang-block { display: none; }
+    .lang-block.active { display: block; }
+
+    .lang-wrap {
+      position: relative;
+      display: inline-block;
+    }
+    .lang-toggle {
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-2);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 7px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.18s, border-color 0.18s;
+    }
+    .lang-toggle:hover {
+      color: var(--text);
+      border-color: var(--accent);
+    }
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 6px);
+      right: 0;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px;
+      display: none;
+      min-width: 100px;
+      z-index: 50;
+    }
+    .lang-menu.open { display: block; }
+    .lang-opt {
+      display: block;
+      width: 100%;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-2);
+      background: transparent;
+      border: none;
+      padding: 7px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: left;
+    }
+    .lang-opt:hover {
+      color: var(--text);
+      background: var(--bg-2);
+    }
+    .lang-opt.active { color: var(--accent); }
+
+    footer {
+      text-align: center;
+      padding: 32px 40px;
+      border-top: 1px solid var(--border);
+      font-size: 12px; color: var(--text-3);
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 14px 20px; }
+      main { padding: 100px 20px 60px; }
+      .page-title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">BAT <span class="accent">LIVE</span></a>
+  <div style="display:flex; align-items:center; gap:10px;">
+    <div class="lang-wrap">
+      <button class="lang-toggle" id="lang-toggle" onclick="toggleLangMenu(event)">
+        <span id="lang-current">EN</span>
+        <svg viewBox="0 0 10 6" width="8" height="5" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg>
+      </button>
+      <div class="lang-menu" id="lang-menu">
+        <button class="lang-opt" data-set-lang="en">EN</button>
+        <button class="lang-opt" data-set-lang="es">ES</button>
+        <button class="lang-opt" data-set-lang="ru">RU</button>
+        <button class="lang-opt" data-set-lang="fr">FR</button>
+        <button class="lang-opt" data-set-lang="de">DE</button>
+        <button class="lang-opt" data-set-lang="pt">PT</button>
+        <button class="lang-opt" data-set-lang="it">IT</button>
+      </div>
+    </div>
+    <a href="index.html" class="back-btn" id="home-btn">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="13" height="13">
+        <path d="M10 3L5 8l5 5"/>
+      </svg>
+      <span id="home-text">Home</span>
+    </a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ENGLISH -->
+  <div class="lang-block" data-lang="en">
+    <h1 class="page-title">Installation Guide</h1>
+
+    <div class="step">
+      <p class="step-text">When opening the "BatLive_Setup" file, a warning will appear.<br> This is a standard Windows protection.</p>
+      <div class="step-img-wrap"><img src="img/install-smartscreen-1.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Click "More info". Then click "Run anyway" to continue the installation.</p>
+      <div class="step-img-wrap"><img src="img/install-smartscreen-2.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Select your language.<br> The BatLive interface is available in 7 languages and can be changed later.</p>
+      <div class="step-img-wrap"><img src="img/install-01-language.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Read the agreement (EULA). Select "I accept the agreement" and click "Next".</p>
+      <div class="step-img-wrap"><img src="img/install-02-eula.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Choose a folder and click "Next".</p>
+      <div class="step-img-wrap"><img src="img/install-03-destination.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Leave the default name or change it. Then click "Next".</p>
+      <div class="step-img-wrap"><img src="img/install-04-menu.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">To create a BatLive desktop icon, check the box. Then click "Next".</p>
+      <div class="step-img-wrap"><img src="img/install-05-tasks.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Review the installation settings and click "Install".</p>
+      <div class="step-img-wrap"><img src="img/install-06-ready.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Wait a few seconds until BatLive is installed.</p>
+      <div class="step-img-wrap"><img src="img/install-07-installing.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Leave "Launch BatLive" checked and click "Finish".</p>
+      <div class="step-img-wrap"><img src="img/install-08-complete.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Activate the license key received by email after purchase.</p>
+      <div class="step-img-wrap"><img src="img/install-09-activate.png" alt="" class="step-img"></div>
+      <p class="step-text" style="margin-top:18px;"><strong>Note:</strong> During the first launch and license activation, the message "No server connection" may appear. Wait a few seconds and try again.</p>
+    </div>
+  </div>
+
+  <!-- ESPAÑOL -->
+  <div class="lang-block" data-lang="es">
+    <h1 class="page-title">Guía de instalación</h1>
+
+    <div class="step">
+      <p class="step-text">Al abrir el archivo «BatLive_Setup» aparecerá un aviso.<br> Es una protección estándar de Windows.</p>
+      <div class="step-img-wrap"><img src="img/install-smartscreen-1.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Pulse «Más información».<br> Después «Ejecutar de todas formas» para continuar con la instalación.</p>
+      <div class="step-img-wrap"><img src="img/install-smartscreen-2.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Seleccione el idioma.<br> La interfaz de BatLive está disponible en 7 idiomas y puede cambiarse más adelante.</p>
+      <div class="step-img-wrap"><img src="img/install-01-language.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Lea el acuerdo (EULA).<br> Seleccione «Acepto los términos del acuerdo» y haga clic en «Siguiente».</p>
+      <div class="step-img-wrap"><img src="img/install-02-eula.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Elija carpeta y haga clic en «Siguiente».</p>
+      <div class="step-img-wrap"><img src="img/install-03-destination.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Deje el nombre predeterminado o cámbielo.<br> Después, haga clic en «Siguiente».</p>
+      <div class="step-img-wrap"><img src="img/install-04-menu.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Para crear un icono de BatLive en el escritorio, marque la casilla.<br> Después, haga clic en «Siguiente».</p>
+      <div class="step-img-wrap"><img src="img/install-05-tasks.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Revise la configuración y haga clic en «Instalar».</p>
+      <div class="step-img-wrap"><img src="img/install-06-ready.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Espere unos segundos hasta que BatLive se instale.</p>
+      <div class="step-img-wrap"><img src="img/install-07-installing.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Deje marcada la opción «Ejecutar BatLive» y haga clic en «Finalizar».</p>
+      <div class="step-img-wrap"><img src="img/install-08-complete.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Active la clave de licencia recibida por correo tras la compra.</p>
+      <div class="step-img-wrap"><img src="img/install-09-activate.png" alt="" class="step-img"></div>
+      <p class="step-text" style="margin-top:18px;"><strong>Nota:</strong> Durante el primer inicio y la activación de la licencia puede aparecer el mensaje «Sin conexión al servidor». Espere unos segundos y vuelva a intentarlo.</p>
+    </div>
+  </div>
+
+  <!-- РУССКИЙ -->
+  <div class="lang-block" data-lang="ru">
+    <h1 class="page-title">Инструкция по установке</h1>
+
+    <div class="step">
+      <p class="step-text">При открытии файла «BatLive_Setup» появится предупреждение.<br> Это стандартная защита Windows.</p>
+      <div class="step-img-wrap"><img src="img/install-smartscreen-1.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Нажмите «Подробнее».<br> Затем чтобы продолжить установку— «Выполнить в любом случае».</p>
+      <div class="step-img-wrap"><img src="img/install-smartscreen-2.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Выберите язык. Интерфейс BatLive доступен на 7 языках, его можно изменить позже.</p>
+      <div class="step-img-wrap"><img src="img/install-01-language.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Прочитайте соглашение (EULA).<br> Выберите «Я принимаю условия соглашения» и нажмите «Далее».</p>
+      <div class="step-img-wrap"><img src="img/install-02-eula.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Выберите папку и нажмите «Далее».</p>
+      <div class="step-img-wrap"><img src="img/install-03-destination.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Оставьте имя по умолчанию или измените его. Затем нажмите «Далее».</p>
+      <div class="step-img-wrap"><img src="img/install-04-menu.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Для создания иконки BatLive на рабочем столе поставьте галочку.<br> Затем нажмите «Далее».</p>
+      <div class="step-img-wrap"><img src="img/install-05-tasks.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Проверьте параметры установки и нажмите «Установить».</p>
+      <div class="step-img-wrap"><img src="img/install-06-ready.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Подождите несколько секунд, пока BatLive установится.</p>
+      <div class="step-img-wrap"><img src="img/install-07-installing.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Оставьте отмеченным пункт «Запустить BatLive» и нажмите «Готово».</p>
+      <div class="step-img-wrap"><img src="img/install-08-complete.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Активируйте лицензионный ключ, полученный по электронной почте после покупки.</p>
+      <div class="step-img-wrap"><img src="img/install-09-activate.png" alt="" class="step-img"></div>
+      <p class="step-text" style="margin-top:18px;"><strong>Примечание:</strong> При первом запуске и активации лицензии может появиться сообщение «Нет подключения к серверу». Подождите несколько секунд и повторите попытку.</p>
+    </div>
+  </div>
+
+  <!-- FRANÇAIS -->
+  <div class="lang-block" data-lang="fr">
+    <h1 class="page-title">Guide d'installation</h1>
+
+    <div class="step">
+      <p class="step-text">Lors de l'ouverture du fichier «BatLive_Setup», un avertissement s'affichera.<br> Il s'agit d'une protection standard de Windows.</p>
+      <div class="step-img-wrap"><img src="img/install-smartscreen-1.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Cliquez sur «Informations complémentaires».<br> Puis sur «Exécuter quand même» pour continuer l'installation.</p>
+      <div class="step-img-wrap"><img src="img/install-smartscreen-2.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Choisissez votre langue.<br> L'interface de BatLive est disponible en 7 langues et peut être modifiée ultérieurement.</p>
+      <div class="step-img-wrap"><img src="img/install-01-language.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Lisez le contrat (EULA).<br> Sélectionnez «J'accepte les termes du contrat» puis cliquez sur «uivant».</p>
+      <div class="step-img-wrap"><img src="img/install-02-eula.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Choisissez un dossier puis cliquez sur «Suivant».</p>
+      <div class="step-img-wrap"><img src="img/install-03-destination.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Conservez le nom par défaut ou modifiez-le. Cliquez ensuite sur «Suivant».</p>
+      <div class="step-img-wrap"><img src="img/install-04-menu.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Pour créer une icône BatLive sur le bureau, cochez la case. Cliquez ensuite sur «Suivant».</p>
+      <div class="step-img-wrap"><img src="img/install-05-tasks.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Vérifiez les paramètres d'installation puis cliquez sur «Installer».</p>
+      <div class="step-img-wrap"><img src="img/install-06-ready.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Patientez quelques secondes le temps que BatLive s'installe.</p>
+      <div class="step-img-wrap"><img src="img/install-07-installing.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Laissez cochée l'option «Lancer BatLive», puis cliquez sur «Terminer».</p>
+      <div class="step-img-wrap"><img src="img/install-08-complete.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Activez la clé de licence reçue par e-mail après l'achat.</p>
+      <div class="step-img-wrap"><img src="img/install-09-activate.png" alt="" class="step-img"></div>
+      <p class="step-text" style="margin-top:18px;"><strong>Remarque :</strong> Lors du premier démarrage et de l'activation de la licence, le message «Pas de connexion au serveur» peut apparaître. Patientez quelques secondes, puis réessayez.</p>
+    </div>
+  </div>
+
+  <!-- DEUTSCH -->
+  <div class="lang-block" data-lang="de">
+    <h1 class="page-title">Installationsanleitung</h1>
+
+    <div class="step">
+      <p class="step-text">Beim Öffnen der Datei „BatLive_Setup" erscheint eine Warnmeldung.<br> Dies ist ein standardmäßiger Windows-Schutz.</p>
+      <div class="step-img-wrap"><img src="img/install-smartscreen-1.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Klicken Sie auf „Weitere Informationen".<br> Danach auf „Trotzdem ausführen", um die Installation fortzusetzen.</p>
+      <div class="step-img-wrap"><img src="img/install-smartscreen-2.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Wählen Sie Ihre Sprache.<br> Die BatLive-Oberfläche ist in 7 Sprachen verfügbar und kann später geändert werden.</p>
+      <div class="step-img-wrap"><img src="img/install-01-language.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Lesen Sie die Vereinbarung (EULA).<br> Wählen Sie „Ich akzeptiere die Vereinbarung" und klicken Sie auf „Weiter".</p>
+      <div class="step-img-wrap"><img src="img/install-02-eula.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Wählen Sie einen Ordner und klicken Sie auf „Weiter".</p>
+      <div class="step-img-wrap"><img src="img/install-03-destination.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Lassen Sie den Standardnamen oder ändern Sie ihn. Klicken Sie anschließend auf „Weiter".</p>
+      <div class="step-img-wrap"><img src="img/install-04-menu.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Um ein BatLive-Symbol auf dem Desktop zu erstellen, aktivieren Sie das Kontrollkästchen. Klicken Sie anschließend auf „Weiter".</p>
+      <div class="step-img-wrap"><img src="img/install-05-tasks.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Überprüfen Sie die Einstellungen und klicken Sie auf „Installieren".</p>
+      <div class="step-img-wrap"><img src="img/install-06-ready.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Warten Sie einige Sekunden, bis BatLive installiert ist.</p>
+      <div class="step-img-wrap"><img src="img/install-07-installing.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Lassen Sie „BatLive starten" aktiviert und klicken Sie auf „Fertigstellen".</p>
+      <div class="step-img-wrap"><img src="img/install-08-complete.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Aktivieren Sie den per E-Mail nach dem Kauf erhaltenen Lizenzschlüssel.</p>
+      <div class="step-img-wrap"><img src="img/install-09-activate.png" alt="" class="step-img"></div>
+      <p class="step-text" style="margin-top:18px;"><strong>Hinweis:</strong> Beim ersten Start und der Lizenzaktivierung kann die Meldung „Keine Verbindung zum Server" erscheinen. Warten Sie einige Sekunden und versuchen Sie es erneut.</p>
+    </div>
+  </div>
+
+  <!-- PORTUGUÊS -->
+  <div class="lang-block" data-lang="pt">
+    <h1 class="page-title">Guia de instalação</h1>
+
+    <div class="step">
+      <p class="step-text">Ao abrir o ficheiro «BatLive_Setup», aparecerá um aviso.<br> Esta é uma proteção padrão do Windows.</p>
+      <div class="step-img-wrap"><img src="img/install-smartscreen-1.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Clique em «Mais informações».<br> Depois em «Executar mesmo assim» para continuar a instalação.</p>
+      <div class="step-img-wrap"><img src="img/install-smartscreen-2.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Selecione o idioma.<br> A interface do BatLive está disponível em 7 idiomas e pode ser alterada mais tarde.</p>
+      <div class="step-img-wrap"><img src="img/install-01-language.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Leia o contrato (EULA). Selecione «Aceito os termos do contrato» e clique em «Seguinte».</p>
+      <div class="step-img-wrap"><img src="img/install-02-eula.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Escolha uma pasta e clique em «Seguinte».</p>
+      <div class="step-img-wrap"><img src="img/install-03-destination.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Mantenha o nome predefinido ou altere-o. Depois clique em «Seguinte».</p>
+      <div class="step-img-wrap"><img src="img/install-04-menu.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Para criar um ícone do BatLive no ambiente de trabalho, marque a caixa.<br> Depois clique em «Seguinte».</p>
+      <div class="step-img-wrap"><img src="img/install-05-tasks.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Verifique as definições e clique em «Instalar».</p>
+      <div class="step-img-wrap"><img src="img/install-06-ready.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Aguarde alguns segundos até o BatLive ser instalado.</p>
+      <div class="step-img-wrap"><img src="img/install-07-installing.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Deixe marcada a opção «Executar BatLive» e clique em «Concluir».</p>
+      <div class="step-img-wrap"><img src="img/install-08-complete.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Ative a chave de licença recebida por e-mail após a compra.</p>
+      <div class="step-img-wrap"><img src="img/install-09-activate.png" alt="" class="step-img"></div>
+      <p class="step-text" style="margin-top:18px;"><strong>Nota:</strong> Durante o primeiro arranque e a ativação da licença, poderá surgir a mensagem «Sem ligação ao servidor». Aguarde alguns segundos e tente novamente.</p>
+    </div>
+  </div>
+
+  <!-- ITALIANO -->
+  <div class="lang-block" data-lang="it">
+    <h1 class="page-title">Guida all'installazione</h1>
+
+    <div class="step">
+      <p class="step-text">Aprendo il file «BatLive_Setup» verrà visualizzato un avviso.<br> Si tratta di una protezione standard di Windows.</p>
+      <div class="step-img-wrap"><img src="img/install-smartscreen-1.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Fare clic su «Ulteriori informazioni».<br> Poi su «Esegui comunque» per continuare l'installazione.</p>
+      <div class="step-img-wrap"><img src="img/install-smartscreen-2.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Selezionare la lingua.<br> L'interfaccia di BatLive è disponibile in 7 lingue e può essere modificata in seguito.</p>
+      <div class="step-img-wrap"><img src="img/install-01-language.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Leggere il contratto (EULA).<br> Selezionare «Accetto i termini del contratto» e fare clic su «Avanti».</p>
+      <div class="step-img-wrap"><img src="img/install-02-eula.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Scegliere una cartella e fare clic su «Avanti».</p>
+      <div class="step-img-wrap"><img src="img/install-03-destination.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Lasciare il nome predefinito oppure modificarlo. Fare quindi clic su «Avanti».</p>
+      <div class="step-img-wrap"><img src="img/install-04-menu.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Per creare un'icona di BatLive sul desktop, selezionare la casella.<br> Fare quindi clic su «Avanti».</p>
+      <div class="step-img-wrap"><img src="img/install-05-tasks.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Controllare le impostazioni e fare clic su «Installa».</p>
+      <div class="step-img-wrap"><img src="img/install-06-ready.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Attendere alcuni secondi finché BatLive non è installato.</p>
+      <div class="step-img-wrap"><img src="img/install-07-installing.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Lasciare selezionata l'opzione «Avvia BatLive» e fare clic su «Fine».</p>
+      <div class="step-img-wrap"><img src="img/install-08-complete.png" alt="" class="step-img"></div>
+    </div>
+
+    <div class="step">
+      <p class="step-text">Attivare la chiave di licenza ricevuta via e-mail dopo l'acquisto.</p>
+      <div class="step-img-wrap"><img src="img/install-09-activate.png" alt="" class="step-img"></div>
+      <p class="step-text" style="margin-top:18px;"><strong>Nota:</strong> Durante il primo avvio e l'attivazione della licenza potrebbe comparire il messaggio «Nessuna connessione al server». Attendere qualche secondo e riprovare.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  © 2026 Fornewday
+</footer>
+
+<script>
+  const savedTheme = localStorage.getItem('batlive-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+
+  const HOME_TEXTS = {
+    en: 'Home', es: 'Inicio', ru: 'Главная',
+    fr: 'Accueil', de: 'Startseite', pt: 'Início', it: 'Home'
+  };
+  const VALID_LANGS = ['en','es','ru','fr','de','pt','it'];
+
+  function applyLang(lang) {
+    if (!VALID_LANGS.includes(lang)) lang = 'en';
+    document.querySelectorAll('.lang-block').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    document.querySelectorAll('.lang-opt').forEach(b => {
+      b.classList.toggle('active', b.dataset.setLang === lang);
+    });
+    document.getElementById('lang-current').textContent = lang.toUpperCase();
+    document.getElementById('home-text').textContent = HOME_TEXTS[lang];
+    document.documentElement.setAttribute('lang', lang);
+    localStorage.setItem('batlive-install-lang', lang);
+    document.getElementById('lang-menu').classList.remove('open');
+  }
+
+  function toggleLangMenu(e) {
+    e.stopPropagation();
+    document.getElementById('lang-menu').classList.toggle('open');
+  }
+
+  document.addEventListener('click', () => {
+    document.getElementById('lang-menu').classList.remove('open');
+  });
+
+  const savedInstallLang = localStorage.getItem('batlive-install-lang');
+  const savedSiteLang = (localStorage.getItem('batlive-lang') || 'en').toLowerCase();
+  applyLang(savedInstallLang || savedSiteLang);
+
+  document.querySelectorAll('.lang-opt').forEach(b => {
+    b.addEventListener('click', () => applyLang(b.dataset.setLang));
+  });
+</script>
+
+</body>
+</html>
