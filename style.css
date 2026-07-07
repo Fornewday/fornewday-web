@@ -1238,7 +1238,7 @@ footer {
 #rv-extra-fields {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 22px;
   margin-bottom: 20px;
 }
 
@@ -1311,7 +1311,7 @@ footer {
   border: none;
   outline: none;
   background: var(--accent);
-  color: #ffffff;
+  color: #0a0a0f;
   font-family: inherit;
   font-size: 15px;
   font-weight: 700;
