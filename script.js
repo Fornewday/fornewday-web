@@ -630,27 +630,41 @@ async function loadReviews() {
     const data = await res.json();
     if (!data.ok || !data.reviews || data.reviews.length === 0) return;
 
-    const reviews = data.reviews.slice(0, 4);
-    grid.innerHTML = reviews.map(function(r) {
-      const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
-      const lic = r.licencias || {};
-      const country = lic.pais ? (cn[lic.pais] || lic.pais) : '';
-      let author = '';
-      if (r.name && country) author = r.name + ' · ' + country;
-      else if (r.name) author = r.name;
-      else if (country) author = country;
-      return '<div class="review-card-item">' +
-               '<div class="review-card-stars">' + stars + '</div>' +
-               '<p class="review-card-comment">' + escapeHtml(r.comment) + '</p>' +
-               '<p class="review-card-author">' + escapeHtml(author) + '</p>' +
-             '</div>';
-    }).join('');
+    const PAGE_SIZE = 3;
+    const allReviews = data.reviews;
+    let currentPage = 0;
 
+    function renderPage() {
+      const start = currentPage * PAGE_SIZE;
+      const chunk = allReviews.slice(start, start + PAGE_SIZE);
+      grid.innerHTML = chunk.map(function(r) {
+        const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+        const lic = r.licencias || {};
+        const country = lic.pais ? (cn[lic.pais] || lic.pais) : '';
+        let author = '';
+        if (r.name && country) author = r.name + ' · ' + country;
+        else if (r.name) author = r.name;
+        else if (country) author = country;
+        return '<div class="review-card-item">' +
+                 '<div class="review-card-stars">' + stars + '</div>' +
+                 '<p class="review-card-comment">' + escapeHtml(r.comment) + '</p>' +
+                 '<p class="review-card-author">' + escapeHtml(author) + '</p>' +
+               '</div>';
+      }).join('');
+    }
+
+    renderPage();
     section.style.display = 'block';
 
-    if (data.reviews.length > 4) {
+    if (allReviews.length > PAGE_SIZE) {
       moreBtn.textContent = l.more;
       moreWrap.style.display = 'block';
+      moreBtn.href = 'javascript:void(0)';
+      moreBtn.onclick = function() {
+        const totalPages = Math.ceil(allReviews.length / PAGE_SIZE);
+        currentPage = (currentPage + 1) % totalPages;
+        renderPage();
+      };
     }
   } catch (e) {}
 }
