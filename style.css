@@ -1364,13 +1364,14 @@ footer {
 }
 
 .review-card-item {
-  background: var(--bg-2);
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 28px 26px;
   display: flex;
   flex-direction: column;
   gap: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
 }
 
 .review-card-stars {

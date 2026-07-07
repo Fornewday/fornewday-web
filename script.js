@@ -612,9 +612,9 @@ async function loadReviews() {
 
   const lang = localStorage.getItem('batlive-lang') || 'en';
   const labels = {
-    en: { more: 'See more reviews', anon: 'Anonymous' },
-    es: { more: 'Ver más reseñas',  anon: 'Anónimo' },
-    ru: { more: 'Больше отзывов',   anon: 'Аноним' },
+    en: { more: 'See more' },
+    es: { more: 'Ver más' },
+    ru: { more: 'Ещё' },
   };
   const l = labels[lang] || labels.en;
 
@@ -635,8 +635,10 @@ async function loadReviews() {
       const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
       const lic = r.licencias || {};
       const country = lic.pais ? (cn[lic.pais] || lic.pais) : '';
-      const name = r.name ? r.name : l.anon;
-      const author = country ? name + ' · ' + country : name;
+      let author = '';
+      if (r.name && country) author = r.name + ' · ' + country;
+      else if (r.name) author = r.name;
+      else if (country) author = country;
       return '<div class="review-card-item">' +
                '<div class="review-card-stars">' + stars + '</div>' +
                '<p class="review-card-comment">' + escapeHtml(r.comment) + '</p>' +
