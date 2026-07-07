@@ -1238,8 +1238,8 @@ footer {
 #rv-extra-fields {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 16px;
+  gap: 14px;
+  margin-bottom: 20px;
 }
 
 #rv-extra-fields input {
@@ -1311,7 +1311,7 @@ footer {
   border: none;
   outline: none;
   background: var(--accent);
-  color: #0a0a0f;
+  color: #ffffff;
   font-family: inherit;
   font-size: 15px;
   font-weight: 700;
