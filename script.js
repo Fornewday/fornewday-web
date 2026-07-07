@@ -602,7 +602,66 @@ if (supportFormEl) supportFormEl.addEventListener('submit', function(e) {
   });
 });
 
-/* ── 9. INIT ──────────────────────────────────────────────── */
+/* ── 9. LOAD REVIEWS ──────────────────────────────────────── */
+async function loadReviews() {
+  const section = document.getElementById('reviews');
+  const grid = document.getElementById('reviews-grid');
+  const moreWrap = document.querySelector('.reviews-more-wrap');
+  const moreBtn = document.getElementById('reviews-more-btn');
+  if (!section || !grid) return;
+
+  const lang = localStorage.getItem('batlive-lang') || 'en';
+  const labels = {
+    en: { more: 'See more reviews', anon: 'Anonymous' },
+    es: { more: 'Ver más reseñas',  anon: 'Anónimo' },
+    ru: { more: 'Больше отзывов',   anon: 'Аноним' },
+  };
+  const l = labels[lang] || labels.en;
+
+  const countryNames = {
+    en: { ES: 'Spain', RU: 'Russia', US: 'United States', GB: 'United Kingdom', FR: 'France', DE: 'Germany', IT: 'Italy', PT: 'Portugal', MX: 'Mexico', AR: 'Argentina', CO: 'Colombia', CL: 'Chile', BR: 'Brazil' },
+    es: { ES: 'España', RU: 'Rusia', US: 'Estados Unidos', GB: 'Reino Unido', FR: 'Francia', DE: 'Alemania', IT: 'Italia', PT: 'Portugal', MX: 'México', AR: 'Argentina', CO: 'Colombia', CL: 'Chile', BR: 'Brasil' },
+    ru: { ES: 'Испания', RU: 'Россия', US: 'США', GB: 'Великобритания', FR: 'Франция', DE: 'Германия', IT: 'Италия', PT: 'Португалия', MX: 'Мексика', AR: 'Аргентина', CO: 'Колумбия', CL: 'Чили', BR: 'Бразилия' },
+  };
+  const cn = countryNames[lang] || countryNames.en;
+
+  try {
+    const res = await fetch('https://batlive-server.onrender.com/reviews-publicadas');
+    const data = await res.json();
+    if (!data.ok || !data.reviews || data.reviews.length === 0) return;
+
+    const reviews = data.reviews.slice(0, 4);
+    grid.innerHTML = reviews.map(function(r) {
+      const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+      const lic = r.licencias || {};
+      const country = lic.pais ? (cn[lic.pais] || lic.pais) : '';
+      const name = r.name ? r.name : l.anon;
+      const author = country ? name + ' · ' + country : name;
+      return '<div class="review-card-item">' +
+               '<div class="review-card-stars">' + stars + '</div>' +
+               '<p class="review-card-comment">' + escapeHtml(r.comment) + '</p>' +
+               '<p class="review-card-author">' + escapeHtml(author) + '</p>' +
+             '</div>';
+    }).join('');
+
+    section.style.display = 'block';
+
+    if (data.reviews.length > 4) {
+      moreBtn.textContent = l.more;
+      moreWrap.style.display = 'block';
+    }
+  } catch (e) {}
+}
+
+function escapeHtml(s) {
+  if (!s) return '';
+  return s.replace(/[&<>"']/g, function(c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+  });
+}
+
+
+/* ── 10. INIT ──────────────────────────────────────────────── */
 (function init() {
   // Restaurar preferencias guardadas
   const savedTheme = localStorage.getItem('batlive-theme');
@@ -613,4 +672,5 @@ if (supportFormEl) supportFormEl.addEventListener('submit', function(e) {
 
   initReveal();
   animateStatusBar();
+  loadReviews();
 })();

@@ -23,9 +23,10 @@
    18. SCROLL REVEAL (animaciones)
    19. ACCESIBILIDAD (prefers-reduced-motion)
    20. REVIEW
-   21. RESPONSIVE — TABLET (max-width: 900px)
-   22. RESPONSIVE — MÓVIL (max-width: 600px)
-   23. RESPONSIVE — MÓVIL PEQUEÑO (max-width: 380px)
+   21. REVIEWS (sección landing)
+   22. RESPONSIVE — TABLET (max-width: 900px)
+   23. RESPONSIVE — MÓVIL (max-width: 600px)
+   24. RESPONSIVE — MÓVIL PEQUEÑO (max-width: 380px)
    ════════════════════════════════════════════════════════════════ */
 
 
@@ -1349,7 +1350,73 @@ footer {
 }
 
 
-/* ── 21. RESPONSIVE — TABLET (max-width: 900px) ─────────────── */
+/* ── 21. REVIEWS (sección landing) ───────────────────────────── */
+.reviews-section {
+  padding: 62px 0;
+  background: var(--bg);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.review-card-item {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.review-card-stars {
+  display: flex;
+  gap: 3px;
+  font-size: 18px;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.review-card-comment {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+  margin: 0;
+}
+
+.review-card-author {
+  font-size: 14px;
+  color: var(--text-2);
+  margin: 0;
+}
+
+.reviews-more-wrap {
+  text-align: center;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 14px 32px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.1s;
+}
+.btn-secondary:hover {
+  background: var(--bg-2);
+  transform: translateY(-1px);
+}
+
+
+/* ── 22. RESPONSIVE — TABLET (max-width: 900px) ─────────────── */
 @media (max-width: 900px) {
 
   /* HERO */
@@ -1403,7 +1470,7 @@ footer {
 }
 
 
-/* ── 22. RESPONSIVE — MÓVIL (max-width: 600px) ──────────────── */
+/* ── 23. RESPONSIVE — MÓVIL (max-width: 600px) ──────────────── */
 @media (max-width: 600px) {
 
   .container { padding: 0 20px; }
@@ -1492,7 +1559,7 @@ footer {
 }
 
 
-/* ── 23. RESPONSIVE — MÓVIL PEQUEÑO (max-width: 380px) ──────── */
+/* ── 24. RESPONSIVE — MÓVIL PEQUEÑO (max-width: 380px) ──────── */
 @media (max-width: 380px) {
   .hero-text h1 { font-size: clamp(32px, 10vw, 38px); }
   .pillar { padding: 26px 18px; }
