@@ -1313,7 +1313,7 @@ footer {
   background: var(--accent);
   color: #0a0a0f;
   font-family: inherit;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   cursor: pointer;
   transition: transform 0.1s, opacity 0.15s;
