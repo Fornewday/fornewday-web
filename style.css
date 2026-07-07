@@ -1198,6 +1198,9 @@ footer {
   padding: 4px;
   transition: color 0.15s, transform 0.1s;
 }
+[data-theme="dark"] .star {
+  color: #4a4a52;
+}
 .star:hover {
   transform: scale(1.08);
 }
