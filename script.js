@@ -556,11 +556,15 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeModal();
 });
 
-document.getElementById('modal-support').addEventListener('click', function(e) {
-  if (e.target === this) closeModal();
-});
+const modalSupportEl = document.getElementById('modal-support');
+if (modalSupportEl) {
+  modalSupportEl.addEventListener('click', function(e) {
+    if (e.target === modalSupportEl) closeModal();
+  });
+}
 
-document.getElementById('support-form').addEventListener('submit', function(e) {
+const supportFormEl = document.getElementById('support-form');
+if (supportFormEl) supportFormEl.addEventListener('submit', function(e) {
   e.preventDefault();
   const form   = this;
   const btn    = document.getElementById('modal-submit');
