@@ -1352,7 +1352,7 @@ footer {
 
 /* ── 21. REVIEWS (sección landing) ───────────────────────────── */
 .reviews-section {
-  padding: 62px 0 30px;
+  padding: 62px 0 0;
   background: var(--bg);
 }
 
@@ -1360,7 +1360,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 24px;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 
 .review-card-item {
