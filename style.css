@@ -1352,7 +1352,7 @@ footer {
 
 /* ── 21. REVIEWS (sección landing) ───────────────────────────── */
 .reviews-section {
-  padding: 62px 0;
+  padding: 62px 0 30px;
   background: var(--bg);
 }
 
@@ -1401,12 +1401,12 @@ footer {
 
 .btn-secondary {
   display: inline-block;
-  padding: 14px 32px;
+  padding: 9px 22px;
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 10px;
   background: transparent;
   color: var(--text);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   text-decoration: none;
   transition: background 0.15s, transform 0.1s;
