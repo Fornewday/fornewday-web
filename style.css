@@ -1253,6 +1253,9 @@ footer {
   font-size: 14px;
   box-sizing: border-box;
 }
+#rv-extra-fields input + input {
+  margin-top: 16px;
+}
 #rv-extra-fields input:focus {
   outline: none;
   border-color: var(--accent);
