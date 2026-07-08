@@ -656,10 +656,6 @@ section h2 {
   display: block;
   opacity: 0.7;
 }
-[data-theme="dark"] .price-methods img {
-  opacity: 1;
-  filter: brightness(0) invert(1);
-}
 
 .pricing-right {
   display: flex; flex-direction: column;
