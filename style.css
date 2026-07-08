@@ -1494,6 +1494,7 @@ footer {
   /* SECCIONES — padding vertical reducido */
   .what, .stats, .features, .screenshots, .state, .pricing, .faq { padding: 40px 0; }
   .contact { padding: 40px 0; }
+  .reviews-section { padding: 24px 0 0; }
 
   /* WHAT */
   .pillar { padding: 32px 24px; }
