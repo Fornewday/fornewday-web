@@ -630,7 +630,7 @@ async function loadReviews() {
     const data = await res.json();
     if (!data.ok || !data.reviews || data.reviews.length === 0) return;
 
-    const PAGE_SIZE = 3;
+    const PAGE_SIZE = window.matchMedia('(max-width: 600px)').matches ? 2 : 3;
     const allReviews = data.reviews;
     let currentPage = 0;
 

@@ -1516,6 +1516,9 @@ footer {
   .price-currency { font-size: 26px; }
   .price-methods { flex-wrap: wrap; }
 
+  /* REVIEWS — 1 columna a todo el ancho */
+  .reviews-grid { grid-template-columns: 1fr; }
+
   /* CTA / botones */
   .btn-primary { font-size: 17px; padding: 14px 24px; width: 100%; justify-content: center; }
   .cta-block { width: 100%; }
