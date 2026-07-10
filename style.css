@@ -79,8 +79,8 @@ body {
 }
 
 [data-theme="light"] {
-  --accent:      #00c853;
-  --accent-glow: rgba(0, 200, 83, 0.15);
+  --accent:      #00ff88;
+  --accent-glow: rgba(0, 255, 136, 0.15);
   --bg:          #ffffff;
   --bg-2:        #f4f4f7;
   --bg-3:        #ebebf0;
@@ -205,7 +205,7 @@ nav .nav-right {
 
 .btn-primary {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  background: var(--accent); color: #0a0a0f;
+  background: rgba(0, 255, 136, 0.90); color: #0a0a0f;
   width: 280px;
   padding: 16px 0; border-radius: 12px;
   font-size: 17px; font-weight: 800; letter-spacing: -0.01em;
