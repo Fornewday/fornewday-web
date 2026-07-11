@@ -25,7 +25,7 @@ const T = {
     sub: 'Ralentiza el desgaste y preserva la capacidad original a largo plazo',
     btn: 'Comprar BatLive · 4,99 €',
     note: 'Pago único · Sin suscripción',
-    heroVideoCaption: 'Sonido al aparecer la alerta',
+    heroVideoCaption: 'El sonido va sincronizado con la ventana emergente',
 
     whatEyebrow: 'BatLive',
     whatH2: 'Elementos clave',
@@ -135,7 +135,7 @@ const T = {
     sub: 'Slows down wear and tear and preserves its original capacity over time',
     btn: 'Buy BatLive · €4.99',
     note: 'One-time payment · No subscription',
-    heroVideoCaption: 'Sound on alert',
+    heroVideoCaption: 'The sound plays when the pop-up appears',
 
     whatEyebrow: 'BatLive',
     whatH2: 'Core principles',
