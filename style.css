@@ -174,7 +174,7 @@ nav .nav-right {
 .hero {
   min-height: auto;
   display: flex; align-items: center;
-  padding: 110px 0 80px;
+  padding: 110px 0 65px;
 }
 
 .hero-inner {
