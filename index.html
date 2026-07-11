@@ -113,6 +113,20 @@
 
       <p class="hero-sub" id="hero-sub">Reduces wear and preserves capacity for years to come</p>
 
+      <div class="hero-video-wrap" id="hero-video-wrap">
+        <video class="hero-video" id="hero-video" muted loop playsinline autoplay>
+          <source src="./img/demo.mp4" type="video/mp4">
+        </video>
+        <button class="sound-toggle expand-toggle" id="expand-toggle" aria-label="Expand video" onclick="openVideoModal()">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <polyline points="9 21 3 21 3 15"></polyline>
+            <line x1="21" y1="3" x2="14" y2="10"></line>
+            <line x1="3" y1="21" x2="10" y2="14"></line>
+          </svg>
+        </button>
+      </div>
+
       <div class="cta-block">
         <a href="checkout.html" class="btn-primary" id="hero-btn">
           <span id="hero-btn-text">Buy BatLive · €4.99</span>
@@ -138,6 +152,30 @@
     </div>
   </div>
 </section>
+
+<div class="video-modal" id="video-modal">
+  <div class="video-modal-panel">
+    <button class="sound-toggle video-modal-close" id="video-modal-close" aria-label="Close video" onclick="closeVideoModal()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <div class="video-modal-inner" id="video-modal-inner"></div>
+    <div class="video-modal-sound-row" id="video-modal-sound-row">
+      <button class="sound-toggle" id="sound-toggle" aria-label="Toggle sound" onclick="toggleSound()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 9v6h4l5 5V4L8 9H4z"></path>
+          <line class="sound-x" x1="17" y1="9" x2="23" y2="15"></line>
+          <line class="sound-x" x1="23" y1="9" x2="17" y2="15"></line>
+          <path class="sound-wave" d="M16 9a5 5 0 0 1 0 6"></path>
+          <path class="sound-wave" d="M19 6.5a9 9 0 0 1 0 11"></path>
+        </svg>
+      </button>
+      <p class="hero-video-caption" id="hero-video-caption">Sound on alert</p>
+    </div>
+  </div>
+</div>
 
 <!-- ── 3. WHAT (pillars) ──────────────────────────────────── -->
 <section class="what reveal">

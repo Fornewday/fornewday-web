@@ -11,7 +11,9 @@
    6.  STATUS BAR animada (animateStatusBar)
    7.  FAQ TOGGLE (toggleFaq)
    8.  MODAL SOPORTE (openModal / closeModal / submit)
-   9.  INIT (auto-ejecución al cargar)
+   9.  LOAD REVIEWS (loadReviews / escapeHtml)
+   10. VÍDEO HERO (openVideoModal / closeVideoModal / toggleSound)
+   11. INIT (auto-ejecución al cargar)
    ════════════════════════════════════════════════════════════════ */
 
 /* ── 1. TRADUCCIONES ─────────────────────────────────────── */
@@ -23,6 +25,7 @@ const T = {
     sub: 'Ralentiza el desgaste y preserva la capacidad original a largo plazo',
     btn: 'Comprar BatLive · 4,99 €',
     note: 'Pago único · Sin suscripción',
+    heroVideoCaption: 'Sonido al aparecer la alerta',
 
     whatEyebrow: 'BatLive',
     whatH2: 'Elementos clave',
@@ -132,6 +135,7 @@ const T = {
     sub: 'Slows down wear and tear and preserves its original capacity over time',
     btn: 'Buy BatLive · €4.99',
     note: 'One-time payment · No subscription',
+    heroVideoCaption: 'Sound on alert',
 
     whatEyebrow: 'BatLive',
     whatH2: 'Core principles',
@@ -240,6 +244,7 @@ const T = {
     sub: 'Замедли износ батареи и сохрани её первоначальную емкость надолго',
     btn: 'Купить BatLive · 4,99 €',
     note: 'Разовая оплата · Без подписки',
+    heroVideoCaption: 'Звук появится синхронно с окном уведомления',
 
     whatEyebrow: 'BatLive',
     whatH2: 'Ключевые элементы',
@@ -359,6 +364,7 @@ function setLang(lang) {
   set('hero-sub',       t.sub);
   set('hero-btn-text',  t.btn);
   set('hero-note',      t.note);
+  set('hero-video-caption', t.heroVideoCaption);
 
   set('what-eyebrow',   t.whatEyebrow);
   set('what-h2',        t.whatH2);
@@ -677,7 +683,71 @@ function escapeHtml(s) {
 }
 
 
-/* ── 10. INIT ──────────────────────────────────────────────── */
+/* ── 10. VÍDEO HERO — MODAL Y SONIDO ──────────────────────── */
+let videoWrapOriginalParent = null;
+let videoWrapOriginalNext   = null;
+
+function openVideoModal() {
+  const wrap  = document.getElementById('hero-video-wrap');
+  const video = document.getElementById('hero-video');
+  const inner = document.getElementById('video-modal-inner');
+  const modal = document.getElementById('video-modal');
+  const soundBtn = document.getElementById('sound-toggle');
+  if (!wrap || !inner || !modal) return;
+
+  // el vídeo siempre entra en silencio al modal
+  if (video) video.muted = true;
+  if (soundBtn) soundBtn.classList.remove('is-unmuted');
+
+  videoWrapOriginalParent = wrap.parentNode;
+  videoWrapOriginalNext   = wrap.nextSibling;
+
+  inner.appendChild(wrap);
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeVideoModal() {
+  const wrap  = document.getElementById('hero-video-wrap');
+  const video = document.getElementById('hero-video');
+  const modal = document.getElementById('video-modal');
+  const soundBtn = document.getElementById('sound-toggle');
+  if (!wrap || !modal || !videoWrapOriginalParent) return;
+
+  // al cerrar, vuelve siempre a mute y el botón a su estado inicial
+  if (video) video.muted = true;
+  if (soundBtn) soundBtn.classList.remove('is-unmuted');
+
+  if (videoWrapOriginalNext) {
+    videoWrapOriginalParent.insertBefore(wrap, videoWrapOriginalNext);
+  } else {
+    videoWrapOriginalParent.appendChild(wrap);
+  }
+
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function toggleSound() {
+  const video = document.getElementById('hero-video');
+  const btn   = document.getElementById('sound-toggle');
+  if (!video || !btn) return;
+  video.muted = !video.muted;
+  btn.classList.toggle('is-unmuted', !video.muted);
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeVideoModal();
+});
+
+const videoModalEl = document.getElementById('video-modal');
+if (videoModalEl) {
+  videoModalEl.addEventListener('click', function(e) {
+    if (e.target === videoModalEl) closeVideoModal();
+  });
+}
+
+/* ── 11. INIT ──────────────────────────────────────────────── */
 (function init() {
   // Restaurar preferencias guardadas
   const savedTheme = localStorage.getItem('batlive-theme');

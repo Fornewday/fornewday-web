@@ -27,6 +27,7 @@
    22. RESPONSIVE — TABLET (max-width: 900px)
    23. RESPONSIVE — MÓVIL (max-width: 600px)
    24. RESPONSIVE — MÓVIL PEQUEÑO (max-width: 380px)
+   25. RESPONSIVE — MÓVIL HORIZONTAL
    ════════════════════════════════════════════════════════════════ */
 
 
@@ -183,7 +184,7 @@ nav .nav-right {
   display: grid;
   grid-template-columns: 1.3fr 0.7fr;
   gap: 40px;
-  align-items: center;
+  align-items: stretch;
 }
 
 .hero-text h1 {
@@ -198,6 +199,54 @@ nav .nav-right {
   font-size: 18px; color: var(--text-2); line-height: 1.6;
   max-width: none; margin-bottom: 40px;
   white-space: nowrap;
+}
+
+/* vídeo demo */
+.hero-video-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 40px;
+}
+
+.hero-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.sound-toggle {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+@media (hover: hover) {
+  .sound-toggle:hover {
+    background: var(--accent);
+    color: var(--bg);
+  }
+}
+.sound-toggle .sound-wave { display: none; }
+.sound-toggle.is-unmuted .sound-x { display: none; }
+.sound-toggle.is-unmuted .sound-wave { display: inline; }
+
+.expand-toggle {
+  right: 10px;
+  bottom: 10px;
 }
 
 /* CTA */
@@ -228,12 +277,13 @@ nav .nav-right {
 
 /* imagen hero */
 .hero-visual {
-  display: flex; justify-content: center; align-items: center;
+  display: flex; justify-content: center; align-items: flex-start;
 }
 
 .app-frame {
   position: relative;
-  display: flex; justify-content: center; align-items: center;
+  display: flex; justify-content: center; align-items: flex-start;
+  width: 100%;
 }
 
 .app-frame::before {
@@ -248,10 +298,90 @@ nav .nav-right {
 }
 
 .app-frame img {
-  max-height: 560px; width: auto; max-width: 100%;
+  width: 100%; height: auto;
+  max-width: 100%;
+  object-fit: contain;
   position: relative; z-index: 1;
   border-radius: 8px;
   border: 1px solid var(--border);
+}
+
+/* modal de ampliación de vídeo */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+.video-modal.open { display: flex; }
+
+.video-modal-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.video-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  z-index: 10;
+}
+
+.video-modal-inner {
+  display: flex;
+  flex: 1;
+}
+.video-modal-inner .hero-video-wrap {
+  width: auto;
+  max-width: none;
+  margin-bottom: 0;
+}
+.video-modal-inner .hero-video {
+  width: auto;
+  height: auto;
+  max-width: 88vw;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 0;
+  border: none;
+}
+.video-modal-inner .expand-toggle {
+  display: none;
+}
+
+.video-modal-sound-row {
+  display: none;
+  position: absolute;
+  right: 20px;
+  bottom: 60px;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  background: transparent;
+  padding: 0;
+}
+.video-modal.open .video-modal-sound-row {
+  display: flex;
+}
+.video-modal-sound-row .hero-video-caption {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+  transform: translateX(-100px);
+}
+.video-modal-sound-row .sound-toggle {
+  position: static;
 }
 
 .img-placeholder {
@@ -1434,7 +1564,7 @@ footer {
   .hero-sub  { max-width: 100%; white-space: normal; }
   .cta-block { align-items: center; }
   .hero-visual { order: -1; }
-  .app-frame img { max-height: 340px; }
+  .app-frame img { height: auto; max-height: 340px; border: none; border-radius: 0; }
 
   /* WHAT */
   .pillars { grid-template-columns: 1fr; gap: 2px; }
@@ -1489,10 +1619,28 @@ footer {
   .hero-inner { padding: 0 20px; gap: 28px; }
   .hero-text h1 { font-size: clamp(32px, 9vw, 40px); }
 
+  .sound-toggle,
+  .expand-toggle,
+  .video-modal-close { width: 26px; height: 26px; }
+
+  .video-modal-inner { max-width: 96vw; max-height: 68vh; }
+  .video-modal-inner .hero-video { max-width: 96vw; max-height: 68vh; }
+  .video-modal { padding: 12px; gap: 12px; }
+  .video-modal-close { top: 10px; left: 10px; }
+
+  .video-modal-sound-row {
+    left: 10px;
+    bottom: 10px;
+    right: auto;
+  }
+  .video-modal-sound-row .hero-video-caption {
+    display: none;
+  }
+
   /* SECTION H2 — más pequeño en móvil */
   section h2 { font-size: clamp(24px, 6vw, 30px); }
   .status-bar { white-space: normal; text-align: center; }
-  .app-frame img { max-height: 460px; }
+  .app-frame img { height: auto; max-height: 460px; border: none; border-radius: 0; }
   .img-placeholder { width: 220px; height: 360px; }
 
   /* SECCIONES — padding vertical reducido */
@@ -1586,4 +1734,23 @@ footer {
   .hero-text h1 { font-size: clamp(32px, 10vw, 38px); }
   .pillar { padding: 26px 18px; }
   .price-extra-block { flex-direction: column; text-align: center; }
+}
+
+
+/* ── 25. RESPONSIVE — MÓVIL HORIZONTAL ──────────────────────── */
+@media (max-width: 900px) and (orientation: landscape) {
+  .sound-toggle,
+  .expand-toggle,
+  .video-modal-close { width: 26px; height: 26px; }
+
+  .video-modal-close { top: 10px; left: 10px; }
+
+  .video-modal-sound-row {
+    left: 10px;
+    bottom: 10px;
+    right: auto;
+  }
+  .video-modal-sound-row .hero-video-caption {
+    display: none;
+  }
 }
