@@ -64,8 +64,8 @@ body {
 
 /* ── 2. VARIABLES ─────────────────────────────────────────────── */
 :root {
-  --accent:      #00ff88;
-  --accent-glow: rgba(0, 255, 136, 0.18);
+  --accent:      #00e57a;
+  --accent-glow: rgba(0, 229, 122, 0.18);
   --bg:          #0a0a0f;
   --bg-2:        #0f0f18;
   --bg-3:        #13131e;
@@ -79,8 +79,8 @@ body {
 }
 
 [data-theme="light"] {
-  --accent:      #00ff88;
-  --accent-glow: rgba(0, 255, 136, 0.15);
+  --accent:      #00e57a;
+  --accent-glow: rgba(0, 229, 122, 0.15);
   --bg:          #ffffff;
   --bg-2:        #f4f4f7;
   --bg-3:        #ebebf0;
@@ -205,7 +205,7 @@ nav .nav-right {
 
 .btn-primary {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  background: rgba(0, 255, 136, 0.90); color: #0a0a0f;
+  background: color-mix(in srgb, var(--accent) 90%, transparent); color: #0a0a0f;
   width: 280px;
   padding: 16px 0; border-radius: 12px;
   font-size: 17px; font-weight: 800; letter-spacing: -0.01em;
@@ -1486,19 +1486,26 @@ footer {
 
   /* HERO */
   .hero { padding: 90px 0 50px; }
-  .hero-inner { padding: 0 20px; }
+  .hero-inner { padding: 0 20px; gap: 28px; }
   .hero-text h1 { font-size: clamp(32px, 9vw, 40px); }
 
   /* SECTION H2 — más pequeño en móvil */
   section h2 { font-size: clamp(24px, 6vw, 30px); }
   .status-bar { white-space: normal; text-align: center; }
-  .app-frame img { max-height: 280px; }
+  .app-frame img { max-height: 460px; }
   .img-placeholder { width: 220px; height: 360px; }
 
   /* SECCIONES — padding vertical reducido */
-  .what, .stats, .features, .screenshots, .state, .pricing, .faq { padding: 40px 0; }
-  .contact { padding: 40px 0; }
+  .what, .stats, .features, .screenshots, .state, .pricing, .faq { padding: 44px 0 28px; }
+  .contact { padding: 28px 0; }
   .reviews-section { padding: 24px 0 0; }
+
+  /* HEADERS de sección — reducir hueco antes de tarjetas */
+  .what-header,
+  .features-header,
+  .screenshots-header,
+  .state-header,
+  .faq-header { margin-bottom: 32px; }
 
   /* WHAT */
   .pillar { padding: 32px 24px; }
@@ -1513,8 +1520,14 @@ footer {
   }
 
   /* SCREENSHOTS */
-  .ss-grid-top { grid-template-columns: 1fr; gap: 16px; }
+  .screenshots { padding-bottom: 36px; }
+  .ss-grid-top { grid-template-columns: 1fr; gap: 32px; }
   .ss-item img { max-width: 280px; margin: 0 auto; }
+  .ss-item .ss-caption { margin-top: 14px; }
+
+  /* STATS — reducir aire encima del primer número y bajo el último */
+  .stats-grid > .stat:first-child { padding-top: 8px; }
+  .stats-grid > .stat:last-child  { padding-bottom: 8px; }
 
   /* PRICING */
   .price-num { font-size: 56px; }
