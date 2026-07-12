@@ -736,6 +736,16 @@ function toggleSound() {
   btn.classList.toggle('is-unmuted', !video.muted);
 }
 
+document.addEventListener('visibilitychange', function() {
+  const video = document.getElementById('hero-video');
+  if (!video) return;
+  if (document.hidden) {
+    video.pause();
+  } else {
+    video.play().catch(function() {});
+  }
+});
+
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeVideoModal();
 });

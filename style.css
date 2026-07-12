@@ -1623,6 +1623,7 @@ footer {
   .expand-toggle,
   .video-modal-close { width: 26px; height: 26px; }
 
+  .video-modal-panel { max-width: 96vw; max-height: 90vh; }
   .video-modal-inner { max-width: 96vw; max-height: 68vh; }
   .video-modal-inner .hero-video { max-width: 96vw; max-height: 68vh; }
   .video-modal { padding: 12px; gap: 12px; }
