@@ -662,7 +662,7 @@ section h2 {
   border-bottom: 1px solid var(--border);
 }
 .state-header {
-  margin-bottom: 56px;
+  margin-bottom: 24px;
 }
 
 .state-grid {
@@ -670,7 +670,7 @@ section h2 {
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
-  margin-bottom: 64px;
+  margin-bottom: 36px;
 }
 .state-shot {
   display: block;
