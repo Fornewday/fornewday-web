@@ -4,20 +4,4 @@
     <loc>https://batlive.app/</loc>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://batlive.app/checkout.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://batlive.app/privacy.html</loc>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://batlive.app/terms.html</loc>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://batlive.app/install-help.html</loc>
-    <priority>0.5</priority>
-  </url>
 </urlset>

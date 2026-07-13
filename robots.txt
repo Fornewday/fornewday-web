@@ -2,5 +2,9 @@ User-agent: *
 Allow: /
 Disallow: /review.html
 Disallow: /thank-you.html
+Disallow: /install-help.html
+Disallow: /checkout.html
+Disallow: /privacy.html
+Disallow: /terms.html
 
 Sitemap: https://batlive.app/sitemap.xml
