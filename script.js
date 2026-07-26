@@ -130,7 +130,7 @@ const T = {
 
   en: {
     code: 'EN',
-    h1: 'Keep your laptop safe<br><span class="accent">Protect your battery</span>',
+    h1: 'Keep your laptop safe<br><span class="accent">Protect its battery</span>',
     statusText: 'Monitoring · 67%',
     sub: 'Slows down wear and tear and preserves its original capacity over time',
     btn: 'Buy BatLive · €4.99',
