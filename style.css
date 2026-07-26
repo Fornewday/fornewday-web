@@ -1257,6 +1257,27 @@ footer {
 .footer-right {
   font-size: 12px; color: var(--text-3);
 }
+.footer-right-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer-youtube {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  transition: opacity .2s;
+}
+.footer-youtube:hover {
+  opacity: 0.7;
+}
+.footer-youtube {
+  display: inline-flex; align-items: center;
+  transition: opacity .2s;
+}
+.footer-youtube:hover {
+  opacity: 0.7;
+}
 
 .footer-links {
   display: flex; align-items: center; gap: 8px;
