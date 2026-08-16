@@ -1279,19 +1279,19 @@ footer {
 .footer-youtube:hover {
   opacity: 0.7;
 }
-.footer-social {
+.footer-brand-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   color: var(--text-3);
   transition: opacity .2s, color .2s;
 }
-.footer-social:hover {
+.footer-brand-link:hover {
   color: var(--text);
 }
-.footer-social[aria-label="TikTok"],
-.footer-social[aria-label="Instagram"] {
-  color: var(--text);
+.footer-social[data-social="tk"],
+.footer-social[data-social="ig"] {
+  color: var(--text-2);
 }
 
 .footer-links {
