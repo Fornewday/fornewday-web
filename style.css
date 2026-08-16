@@ -1288,9 +1288,6 @@ footer {
 .footer-brand-link:hover {
   color: var(--text);
 }
-.footer-brand-link[data-social="ig"] {
-  color: var(--text-2);
-}
 
 .footer-links {
   display: flex; align-items: center; gap: 8px;
