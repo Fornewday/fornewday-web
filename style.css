@@ -1261,6 +1261,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 14px;
+  margin-right: 18px;
 }
 .footer-youtube {
   display: inline-flex;
@@ -1277,6 +1278,20 @@ footer {
 }
 .footer-youtube:hover {
   opacity: 0.7;
+}
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-3);
+  transition: opacity .2s, color .2s;
+}
+.footer-social:hover {
+  color: var(--text);
+}
+.footer-social[aria-label="TikTok"],
+.footer-social[aria-label="Instagram"] {
+  color: var(--text);
 }
 
 .footer-links {
