@@ -1288,7 +1288,6 @@ footer {
 .footer-brand-link:hover {
   color: var(--text);
 }
-.footer-brand-link[data-social="tk"],
 .footer-brand-link[data-social="ig"] {
   color: var(--text-2);
 }
