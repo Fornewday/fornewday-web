@@ -803,8 +803,15 @@ section h2 {
   width: 100%;
 }
 .pricing-right .price-amount {
-  margin-bottom: 8px;
+  margin-bottom: 0;
 }
+.price-tax {
+  font-size: 13px;
+  color: var(--text-3);
+  margin-top: -14px;
+  margin-bottom: -6px;
+}
+
 .price-amount {
   display: flex; align-items: flex-start; gap: 4px;
   line-height: 1;

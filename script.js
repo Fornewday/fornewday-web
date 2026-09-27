@@ -24,7 +24,7 @@ const T = {
     statusText: 'Monitorización · 67%',
     sub: 'Ralentiza el desgaste y preserva la capacidad original a largo plazo',
     btn: 'Comprar BatLive · 4,99 €',
-    note: 'Pago único · Sin suscripción',
+    note: 'Impuestos incluidos · Pago único · Sin suscripción',
     heroVideoCaption: 'El sonido va sincronizado con la ventana emergente',
 
     whatEyebrow: 'BatLive',
@@ -83,6 +83,7 @@ const T = {
     perk3: 'Soporte por correo electrónico',
     priceBtnText: 'Comprar BatLive',
     priceNum: '4,99',
+    priceTax: 'Impuestos incluidos',
     priceSecure: 'Pago seguro mediante Stripe',
     priceExtra: 'Recibirás licencia y descarga de BatLive al instante por email',
 
@@ -134,7 +135,7 @@ const T = {
     statusText: 'Monitoring · 67%',
     sub: 'Slows down wear and tear and preserves its original capacity over time',
     btn: 'Buy BatLive · €4.99',
-    note: 'One-time payment · No subscription',
+    note: 'Taxes included · One-time payment · No subscription',
     heroVideoCaption: 'The sound plays when the pop-up appears',
 
     whatEyebrow: 'BatLive',
@@ -192,6 +193,7 @@ const T = {
     perk3: 'Email support',
     priceBtnText: 'Buy BatLive',
     priceNum: '4.99',
+    priceTax: 'Taxes included',
     priceSecure: 'Secure payment powered by Stripe',
     priceExtra: 'License and BatLive download link by email instantly',
 
@@ -243,7 +245,7 @@ const T = {
     statusText: 'Мониторинг · 67%',
     sub: 'Замедли износ батареи и сохрани её первоначальную емкость надолго',
     btn: 'Купить BatLive · 4,99 €',
-    note: 'Разовая оплата · Без подписки',
+    note: 'Налоги включены · Разовая оплата · Без подписки',
     heroVideoCaption: 'Звук появится синхронно с окном уведомления',
 
     whatEyebrow: 'BatLive',
@@ -301,6 +303,7 @@ const T = {
     perk3: 'Поддержка по email',
     priceBtnText: 'Купить BatLive',
     priceNum: '4,99',
+    priceTax: 'Налоги включены',
     priceSecure: 'Безопасная оплата через Stripe',
     priceExtra: 'Лицензионный ключ и ссылка на скачивание BatLive придут на email',
 
@@ -432,6 +435,8 @@ function setLang(lang) {
   set('contact-h2',  t.contactH2);
   set('contact-sub', t.contactSub);
   set('contact-btn', t.contactBtn);
+
+  set('price-tax',         t.priceTax);
 
   set('modal-title',       t.modalTitle);
   set('modal-label-email', t.modalEmail);
