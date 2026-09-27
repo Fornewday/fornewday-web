@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function() {
+      var t = localStorage.getItem('batlive-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Extend Laptop Battery Life on Windows (2026 Guide) — BatLive</title>
+  <meta name="description" content="Discover practical ways to extend laptop battery life on Windows 10 and 11. Learn the 20-80 rule, heat control, and charge alerts that help reduce battery wear.">
+  <link rel="canonical" href="https://batlive.app/extend-battery.html">
+
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="manifest" href="img/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ── NAVBAR ─────────────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" style="text-decoration:none">BAT <span class="accent">LIVE</span></a>
+    <div class="nav-right">
+      <button class="theme-btn" onclick="toggleTheme()" aria-label="Cambiar tema">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor" width="17" height="17">
+          <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.4 5.4 0 0 1-4.4 2.26 5.4 5.4 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="17" height="17">
+          <circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/>
+          <line x1="12" y1="2"  x2="12" y2="5"/>
+          <line x1="12" y1="19" x2="12" y2="22"/>
+          <line x1="2"  y1="12" x2="5"  y2="12"/>
+          <line x1="19" y1="12" x2="22" y2="12"/>
+          <line x1="4.2"  y1="4.2"  x2="6.3"  y2="6.3"/>
+          <line x1="17.7" y1="17.7" x2="19.8" y2="19.8"/>
+          <line x1="4.2"  y1="19.8" x2="6.3"  y2="17.7"/>
+          <line x1="17.7" y1="6.3"  x2="19.8" y2="4.2"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── CONTENIDO DEL ARTÍCULO ─────────────────────────────── -->
+<main class="article-container">
+
+  <h1>How to Extend Laptop Battery Life on Windows (2026 Guide)</h1>
+  <div class="article-meta">Published by BatLive · Updated for Windows 10 &amp; 11</div>
+
+  <p>Lithium-ion laptop batteries naturally lose capacity over time. The speed of that decline depends on how the battery is charged, used, and stored.</p>
+
+  <p>While chemical aging cannot be stopped entirely, a few daily habits can help slow capacity loss. Setting up simple charging thresholds based on battery chemistry can preserve usable capacity across years of normal use.</p>
+
+  <p>This guide explains why laptop batteries age, how the <strong>20-80 battery rule</strong> works, how to use the built-in Windows battery report, and how monitoring tools make long-term battery care easier.</p>
+
+  <h2>Why Laptop Batteries Degrade Over Time</h2>
+  <p>Modern laptops use lithium-ion or lithium-polymer cells. Over time, electrochemical processes cause chemical and physical changes inside the cells. Four important factors contribute to battery wear:</p>
+
+  <h3>Charge Cycle Accumulation</h3>
+  <p>A charge cycle equals one full discharge and recharge of the battery’s capacity, even when spread across several partial sessions. As cycles accumulate, maximum energy retention gradually decreases.</p>
+
+  <h3>Heat Exposure</h3>
+  <p>Elevated internal temperatures accelerate chemical breakdown. Heavy workloads, blocked vents, or charging in warm environments raise internal temperatures and speed permanent capacity loss.</p>
+
+  <h3>Frequent Deep Discharges</h3>
+  <p>Repeatedly discharging a battery to very low levels increases electrical stress on the cells compared with keeping the charge in a moderate range.</p>
+
+  <h3>Sustained High State of Charge</h3>
+  <p>Leaving a laptop plugged in for long periods often keeps the battery at a very high state of charge. Prolonged exposure to a high state of charge stresses internal chemistry and reduces long-term charge retention.</p>
+
+  <h2>The 20-80 Battery Rule Explained</h2>
+  <p>The <strong>20-80 battery rule</strong> is a simple guideline: keep the battery between roughly <strong>20% and 80%</strong> during everyday use instead of repeatedly cycling between empty and full.</p>
+
+  <h3>Why the Mid-Range Helps</h3>
+  <p>Lithium-ion batteries generally age faster when held for long periods at very high or very low states of charge. Limiting daily charging to around 80% reduces time spent at a high state of charge.</p>
+
+  <h3>Practical Use</h3>
+  <p>When you work near an outlet, staying in the 20–80% range is usually enough. When you need maximum runtime (travel, long meetings), charging to 100% is fine. The goal is simply to avoid keeping the battery at a very high charge level unnecessarily.</p>
+
+  <h2>Built-in Windows Battery Tools and Their Limits</h2>
+  <p>Windows includes useful diagnostic tools, but they focus on history rather than prevention.</p>
+
+  <h3>Running the Windows Battery Report</h3>
+  <ol>
+    <li>Open Command Prompt or PowerShell (press <strong>Win + X</strong> and select <strong>Terminal</strong>).</li>
+    <li>Type the following command and press <strong>Enter</strong>:</li>
+  </ol>
+  <div class="article-code-block">powercfg /batteryreport</div>
+  <ol start="3">
+    <li>Open the HTML file path shown in the terminal output to view your report.</li>
+  </ol>
+
+  <p>Typical fields (availability depends on hardware and BIOS):</p>
+  <ul>
+    <li><strong>Design Capacity:</strong> original factory rating (mWh).</li>
+    <li><strong>Full Charge Capacity:</strong> current maximum energy the battery can hold.</li>
+    <li><strong>Cycle Count:</strong> estimated completed cycles.</li>
+  </ul>
+
+  <h3>Limitations</h3>
+  <ul>
+    <li>The report shows past wear; it does not prevent future wear.</li>
+    <li>Windows does not provide a general built-in customizable alert for reaching 80% charge.</li>
+    <li>Generating the detailed report requires running a command; basic battery info is also available in Settings → System → Power &amp; battery.</li>
+  </ul>
+
+  <h2>Practical Tips to Extend Laptop Battery Life</h2>
+  <ul>
+    <li>Unplug near 80% and plug back in near 20% during desk work.</li>
+    <li>Keep vents clear. Use the laptop on hard, flat surfaces; avoid soft bedding or cushions.</li>
+    <li>Manage heat during heavy workloads. Clear airflow is especially important while gaming or rendering.</li>
+    <li>Lower screen brightness to reduce power draw and extend single-charge runtime.</li>
+    <li>Enable Energy Saver in Windows 11 (Settings → System → Power &amp; battery) to limit background activity.</li>
+    <li>Use Hibernate for long breaks. It writes the session to disk and powers down the computer, drawing almost no power aside from natural battery self-discharge.</li>
+    <li>For long-term storage, leave the battery at roughly 40–50% in a cool, dry place.</li>
+  </ul>
+
+  <!-- ── CAJA DE LLAMADA A LA ACCIÓN (BATLIVE) ── -->
+  <div class="article-cta-box">
+    <h3>Automate Your 20-80 Charging Routine</h3>
+    <p>Windows doesn't alert you when your battery hits 80%. BatLive runs quietly in the background, notifying you when to plug or unplug.</p>
+    <a href="checkout.html" class="btn-primary" style="margin: 0 auto; display: inline-flex;">
+      Get BatLive · €4.99
+    </a>
+    <p style="font-size: 13px; color: var(--text-3); margin-top: 12px; margin-bottom: 0;">
+      One-time payment · Lifetime license · Taxes included
+    </p>
+  </div>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="article-faq-item">
+    <h3>What is the 20-80 battery rule?</h3>
+    <p>Keep the battery roughly between 20% and 80% during everyday use to reduce time spent at high or low voltage extremes.</p>
+  </div>
+
+  <div class="article-faq-item">
+    <h3>Does charging to 100% ruin the battery?</h3>
+    <p>No. Occasional full charges are fine. The issue is leaving the battery at 100% for long periods.</p>
+  </div>
+
+  <div class="article-faq-item">
+    <h3>How do I check battery health on Windows 11?</h3>
+    <p>Run <strong>powercfg /batteryreport</strong> in Command Prompt, then open the HTML file it creates. You can also view basic battery info in Settings → System → Power &amp; battery.</p>
+  </div>
+
+  <div class="article-faq-item">
+    <h3>Sleep or Hibernate — which saves more battery?</h3>
+    <p>Hibernate. It writes your session to disk and turns off the laptop, drawing almost no power aside from natural battery self-discharge.</p>
+  </div>
+
+  <div class="article-faq-item">
+    <h3>Best charge level for long-term storage?</h3>
+    <p>Around 40–50%, stored in a cool, dry place.</p>
+  </div>
+
+</main>
+
+<!-- ── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <div class="container footer-inner">
+    <div class="logo">BAT <span class="accent">LIVE</span></div>
+    <p class="footer-copy">© 2026 Fornewday</p>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <span class="footer-sep">·</span>
+      <a href="terms.html">Terms of Use</a>
+    </div>
+    <p class="footer-right">Windows 10 / 11</p>
+  </div>
+</footer>
+
+<script>
+  function toggleTheme() {
+    const cur = document.documentElement.getAttribute('data-theme') || 'light';
+    const next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('batlive-theme', next);
+  }
+</script>
+</body>
+</html>
