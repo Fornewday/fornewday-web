@@ -22,6 +22,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .article-meta {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .article-hero-img {
+      width: 100%;
+      height: auto;
+      margin: 24px 0 32px 0;
+      display: block;
+      position: relative;
+      left: -25px;
+    }
+    .hero-dark { display: none; }
+    html[data-theme="dark"] .hero-light { display: none; }
+    html[data-theme="dark"] .hero-dark { display: block; }
+  </style>
+  
 </head>
 <body>
 
@@ -55,6 +73,9 @@
 
   <h1>How to Extend Laptop Battery Life on Windows (2026 Guide)</h1>
   <div class="article-meta">Published by BatLive · Updated for Windows 10 &amp; 11</div>
+
+  <img src="img/blog/hero-white.jpg" alt="Laptop battery protection" class="article-hero-img hero-light">
+  <img src="img/blog/hero-black.png" alt="Laptop battery protection" class="article-hero-img hero-dark">
 
   <p>Lithium-ion laptop batteries naturally lose capacity over time. The speed of that decline depends on how the battery is charged, used, and stored.</p>
 
