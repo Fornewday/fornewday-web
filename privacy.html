@@ -10,173 +10,36 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    :root {
-      --accent:   #00e57a;
-      --bg:       #0a0a0f;
-      --bg-2:     #0f0f18;
-      --text:     #ffffff;
-      --text-2:   rgba(255,255,255,0.65);
-      --text-3:   rgba(255,255,255,0.35);
-      --border:   rgba(255,255,255,0.08);
-      --nav-bg:   rgba(10,10,15,0.88);
-    }
-    [data-theme="light"] {
-      --accent:   #00e57a;
-      --bg:       #ffffff;
-      --bg-2:     #f4f4f7;
-      --text:     #111118;
-      --text-2:   rgba(17,17,24,0.62);
-      --text-3:   rgba(17,17,24,0.38);
-      --border:   rgba(17,17,24,0.08);
-      --nav-bg:   rgba(255,255,255,0.88);
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 16px 40px;
-      background: var(--nav-bg);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
-    .logo {
-      font-size: 20px; font-weight: 900;
-      letter-spacing: -0.03em;
-      color: var(--text); text-decoration: none;
-    }
-    .logo .accent { color: var(--accent); }
-    .back-btn {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-family: inherit; font-size: 13px; font-weight: 600;
-      color: var(--text-2); background: none; border: none;
-      cursor: pointer; text-decoration: none;
-      padding: 7px 14px; border-radius: 8px;
-      border: 1px solid var(--border);
-      transition: color 0.18s, border-color 0.18s;
-    }
-    .back-btn:hover { color: var(--text); border-color: var(--accent); }
-
-    /* CONTENT */
-    main {
-      max-width: 740px;
-      margin: 0 auto;
-      padding: 120px 40px 80px;
-    }
-
-    .page-title {
-      font-size: 36px; font-weight: 900;
-      letter-spacing: -0.03em;
-      margin-bottom: 8px;
-    }
-    .page-date {
-      font-size: 13px; color: var(--text-3);
-      margin-bottom: 60px;
-    }
-
-    /* lang blocks */
-    .lang-block {
-      margin-bottom: 72px;
-      padding-bottom: 72px;
-      border-bottom: 1px solid var(--border);
-    }
-    .lang-block:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-    }
-    .lang-tag {
-      display: inline-block;
-      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 28px;
-      padding: 4px 10px;
-      border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
-      border-radius: 6px;
-    }
-
-    h2 {
-      font-size: 22px; font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 6px;
-      color: var(--text);
-    }
-    h3 {
-      font-size: 15px; font-weight: 700;
-      color: var(--text);
-      margin: 28px 0 8px;
-    }
-    p {
-      font-size: 15px; color: var(--text-2);
-      margin-bottom: 12px;
-    }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    ul {
-      list-style: none;
-      margin: 8px 0 12px;
-      display: flex; flex-direction: column; gap: 6px;
-    }
-    ul li {
-      font-size: 15px; color: var(--text-2);
-      padding-left: 16px; position: relative;
-    }
-    ul li::before {
-      content: '–';
-      position: absolute; left: 0;
-      color: var(--text-3);
-    }
-
-    /* footer */
-    footer {
-      text-align: center;
-      padding: 32px 40px;
-      border-top: 1px solid var(--border);
-      font-size: 12px; color: var(--text-3);
-    }
-
-    @media (max-width: 600px) {
-      nav { padding: 14px 20px; }
-      main { padding: 100px 20px 60px; }
-      .page-title { font-size: 28px; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav>
-  <a href="index.html" class="logo">BAT <span class="accent">LIVE</span></a>
-  <a href="index.html" class="back-btn" onclick="if(document.referrer){history.back();return false;}">
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="13" height="13">
-      <path d="M10 3L5 8l5 5"/>
-    </svg>
-    <span>Back</span>
-  </a>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">BAT <span class="accent">LIVE</span></a>
+    <a href="index.html" class="back-btn" onclick="if(document.referrer){history.back();return false;}">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="13" height="13">
+        <path d="M10 3L5 8l5 5"/>
+      </svg>
+      <span>Back</span>
+    </a>
+  </div>
 </nav>
 
-<main>
+<main class="legal-main">
   <h1 class="page-title" id="page-title">Privacy Policy</h1>
-  <p class="page-date" id="page-date">Last updated: June 2026</p>
+  <p class="page-date" id="page-date">Last updated: October 2026</p>
 
   <!-- ── ENGLISH ── -->
   <div class="lang-block" data-lang="en">
     <h2>Privacy Policy — BatLive</h2>
 
-    <h3>1. Controller</h3>
-    <p>Fornewday<br>Contact: fornewday.official@gmail.com</p>
-
+    <h3>1. Data Controller</h3>
+    <p>Andrey Rodichkin Rodichkin (hereinafter, "Fornewday")<br>
+    Tax ID (NIF): 70093003C<br>
+    Calle Proaza 5, 33012 Oviedo, Asturias, Spain<br>
+    Contact: fornewday.official@gmail.com</p>
+    
     <h3>2. Data collected</h3>
     <ul>
       <li><strong>Email address</strong> — provided during purchase via Stripe.</li>
@@ -211,7 +74,10 @@
     <h2>Política de privacidad — BatLive</h2>
 
     <h3>1. Responsable del tratamiento</h3>
-    <p>Fornewday<br>Contacto: fornewday.official@gmail.com</p>
+    <p>Andrey Rodichkin Rodichkin (en adelante, "Fornewday")<br>
+    NIF: 70093003C<br>
+    Calle Proaza 5, 33012 Oviedo, Asturias, España<br>
+    Contacto: fornewday.official@gmail.com</p>
 
     <h3>2. Datos recogidos</h3>
     <ul>
@@ -247,7 +113,10 @@
     <h2>Политика конфиденциальности — BatLive</h2>
 
     <h3>1. Ответственное лицо</h3>
-    <p>Fornewday<br>Контакт: fornewday.official@gmail.com</p>
+    <p>Andrey Rodichkin Rodichkin (далее — «Fornewday»)<br>
+    NIF: 70093003C<br>
+    Calle Proaza 5, 33012 Oviedo, Asturias, España<br>
+    Контакт: fornewday.official@gmail.com</p>
 
     <h3>2. Собираемые данные</h3>
     <ul>
@@ -280,8 +149,33 @@
 
 </main>
 
+<!-- ── 11. FOOTER ─────────────────────────────────────────── -->
 <footer>
-  © 2026 Fornewday
+  <div class="container footer-inner">
+    <p class="footer-copy" id="footer-copy">© 2026 Fornewday</p>
+    <div class="footer-links">
+      <a href="extend-battery.html">Guide</a>
+      <span class="footer-sep">·</span>
+      <a href="privacy.html" id="footer-privacy">Privacy Policy</a>
+      <span class="footer-sep">·</span>
+      <a href="terms.html" id="footer-terms">Terms of Use</a>
+      <span class="footer-sep">·</span>
+      <a href="cookies.html" id="footer-cookies">Cookies</a>
+    </div>
+    <div class="footer-right-wrap">
+      <span class="footer-right" id="footer-right">Windows 10 / 11</span>
+      <a href="https://youtube.com/@BatLiveApp" target="_blank" rel="noopener" class="footer-brand-link" aria-label="YouTube" data-social="yt">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2C0 8 0 12 0 12s0 4 .5 5.8a3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.8.5-5.8.5-5.8s0-4-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z" fill-rule="evenodd" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      <a href="https://instagram.com/fornewday.official" target="_blank" rel="noopener" class="footer-brand-link" aria-label="Instagram" data-social="ig">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
 </footer>
 
 <script src="legal.js"></script>

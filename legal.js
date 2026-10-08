@@ -16,12 +16,12 @@
   const titles = {
     en: isPrivacy ? 'Privacy Policy' : 'Terms of Use',
     es: isPrivacy ? 'Política de privacidad' : 'Términos de uso',
-    ru: isPrivacy ? 'Политика конфиденциальности' : 'Условия использования',
+    ru: isPrivacy ? 'Конфиденциальность' : 'Условия',
   };
   const dates = {
-    en: 'Last updated: June 2026',
-    es: 'Última actualización: junio 2026',
-    ru: 'Последнее обновление: июнь 2026',
+    en: 'Last updated: October 2026',
+    es: 'Última actualización: octubre 2026',
+    ru: 'Последнее обновление: октябрь 2026',
   };
   const title = document.getElementById('page-title');
   const date  = document.getElementById('page-date');

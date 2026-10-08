@@ -10,180 +10,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    :root {
-      --accent:   #00e57a;
-      --bg:       #0a0a0f;
-      --bg-2:     #0f0f18;
-      --text:     #ffffff;
-      --text-2:   rgba(255,255,255,0.65);
-      --text-3:   rgba(255,255,255,0.35);
-      --border:   rgba(255,255,255,0.08);
-      --nav-bg:   rgba(10,10,15,0.88);
-    }
-    [data-theme="light"] {
-      --accent:   #00e57a;
-      --bg:       #ffffff;
-      --bg-2:     #f4f4f7;
-      --text:     #111118;
-      --text-2:   rgba(17,17,24,0.62);
-      --text-3:   rgba(17,17,24,0.38);
-      --border:   rgba(17,17,24,0.08);
-      --nav-bg:   rgba(255,255,255,0.88);
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 16px 40px;
-      background: var(--nav-bg);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
-    .logo {
-      font-size: 20px; font-weight: 900;
-      letter-spacing: -0.03em;
-      color: var(--text); text-decoration: none;
-    }
-    .logo .accent { color: var(--accent); }
-    .back-btn {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-family: inherit; font-size: 13px; font-weight: 600;
-      color: var(--text-2); background: none; border: none;
-      cursor: pointer; text-decoration: none;
-      padding: 7px 14px; border-radius: 8px;
-      border: 1px solid var(--border);
-      transition: color 0.18s, border-color 0.18s;
-    }
-    .back-btn:hover { color: var(--text); border-color: var(--accent); }
-
-    main {
-      max-width: 740px;
-      margin: 0 auto;
-      padding: 120px 40px 80px;
-    }
-
-    .page-title {
-      font-size: 36px; font-weight: 900;
-      letter-spacing: -0.03em;
-      margin-bottom: 60px;
-      text-align: center;
-    }
-
-    .step {
-      margin-bottom: 48px;
-      padding-bottom: 48px;
-      border-bottom: 1px solid var(--border);
-    }
-    .step:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-    }
-    .step-text {
-      font-size: 15px;
-      color: var(--text-2);
-      margin-bottom: 18px;
-      text-align: center;
-    }
-    .step-img-wrap {
-      text-align: center;
-    }
-    .step-img {
-      max-width: 100%;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      display: inline-block;
-    }
-
-    .lang-block { display: none; }
-    .lang-block.active { display: block; }
-
-    .lang-wrap {
-      position: relative;
-      display: inline-block;
-    }
-    .lang-toggle {
-      font-family: inherit;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-2);
-      background: transparent;
-      border: 1px solid var(--border);
-      padding: 7px 14px;
-      border-radius: 8px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: color 0.18s, border-color 0.18s;
-    }
-    .lang-toggle:hover {
-      color: var(--text);
-      border-color: var(--accent);
-    }
-    .lang-menu {
-      position: absolute;
-      top: calc(100% + 6px);
-      right: 0;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 6px;
-      display: none;
-      min-width: 100px;
-      z-index: 50;
-    }
-    .lang-menu.open { display: block; }
-    .lang-opt {
-      display: block;
-      width: 100%;
-      font-family: inherit;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-2);
-      background: transparent;
-      border: none;
-      padding: 7px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      text-align: left;
-    }
-    .lang-opt:hover {
-      color: var(--text);
-      background: var(--bg-2);
-    }
-    .lang-opt.active { color: var(--accent); }
-
-    footer {
-      text-align: center;
-      padding: 32px 40px;
-      border-top: 1px solid var(--border);
-      font-size: 12px; color: var(--text-3);
-    }
-
-    @media (max-width: 600px) {
-      nav { padding: 14px 20px; }
-      main { padding: 100px 20px 60px; }
-      .page-title { font-size: 26px; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="logo">BAT <span class="accent">LIVE</span></a>
-  <div style="display:flex; align-items:center; gap:10px;">
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">BAT <span class="accent">LIVE</span></a>
+    <div style="display:flex; align-items:center; gap:10px;">
     <div class="lang-wrap">
       <button class="lang-toggle" id="lang-toggle" onclick="toggleLangMenu(event)">
         <span id="lang-current">EN</span>
@@ -205,10 +39,11 @@
       </svg>
       <span id="home-text">Home</span>
     </a>
+    </div>
   </div>
 </nav>
 
-<main>
+<main class="install-main">
 
   <!-- ENGLISH -->
   <div class="lang-block" data-lang="en">
@@ -640,7 +475,31 @@
 </main>
 
 <footer>
-  © 2026 Fornewday
+  <div class="container footer-inner">
+    <p class="footer-copy" id="footer-copy">© 2026 Fornewday</p>
+    <div class="footer-links">
+      <a href="extend-battery.html">Guide</a>
+      <span class="footer-sep">·</span>
+      <a href="privacy.html" id="footer-privacy">Privacy Policy</a>
+      <span class="footer-sep">·</span>
+      <a href="terms.html" id="footer-terms">Terms of Use</a>
+      <span class="footer-sep">·</span>
+      <a href="cookies.html" id="footer-cookies">Cookies</a>
+    </div>
+    <div class="footer-right-wrap">
+      <span class="footer-right" id="footer-right">Windows 10 / 11</span>
+      <a href="https://youtube.com/@BatLiveApp" target="_blank" rel="noopener" class="footer-brand-link" aria-label="YouTube" data-social="yt">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+      </a>
+      <a href="https://instagram.com/fornewday.official" target="_blank" rel="noopener" class="footer-brand-link" aria-label="Instagram" data-social="ig">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
 </footer>
 
 <script>

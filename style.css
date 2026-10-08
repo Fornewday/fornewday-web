@@ -29,6 +29,8 @@
    24. RESPONSIVE — MÓVIL (max-width: 600px)
    25. RESPONSIVE — MÓVIL PEQUEÑO (max-width: 380px)
    26. RESPONSIVE — MÓVIL HORIZONTAL
+   27. LEGAL PAGES
+   28. INSTALLATION GUIDE
    ════════════════════════════════════════════════════════════════ */
 
 
@@ -1174,7 +1176,6 @@ section h2 {
   font-size: 12px; color: var(--text-3);
 }
 
-
 /* ── 16. THANKYOU ─────────────────────────────────────────────── */
 .thankyou {
   padding: 130px 0 80px;
@@ -1366,6 +1367,29 @@ section h2 {
   line-height: 1.6;
 }
 
+.article-hero-img {
+  width: 100%;
+  height: auto;
+  margin: 24px 0 32px 0;
+  display: block;
+  position: relative;
+  left: -25px;
+}
+.hero-dark { display: none; }
+html[data-theme="dark"] .hero-light { display: none; }
+html[data-theme="dark"] .hero-dark { display: block; }
+
+.article-cta-box .btn-primary {
+  margin: 0 auto;
+  display: inline-flex;
+}
+.article-cta-note {
+  font-size: 13px;
+  color: var(--text-3);
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
 /* ── 18. FOOTER ───────────────────────────────────────────────── */
 footer {
   padding: 20px 0;
@@ -1434,8 +1458,7 @@ footer {
 .footer-links a:hover { color: var(--accent); }
 .footer-sep { color: var(--text-3); }
 
-
-/* ── 20. SCROLL REVEAL ────────────────────────────────────────── */
+/* ── 19. SCROLL REVEAL ────────────────────────────────────────── */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
@@ -1443,11 +1466,10 @@ footer {
 .reveal-child.visible { opacity: 1; transform: translateY(0); }
 
 
-/* ── 21. ACCESIBILIDAD ────────────────────────────────────────── */
+/* ── 20. ACCESIBILIDAD ────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
-
 
 /* ── 21. REVIEW ───────────────────────────────────────────────── */
 .review {
@@ -1716,7 +1738,6 @@ footer {
   transform: translateY(-1px);
 }
 
-
 /* ── 23. RESPONSIVE — TABLET (max-width: 900px) ─────────────── */
 @media (max-width: 900px) {
 
@@ -1769,7 +1790,6 @@ footer {
   /* FOOTER */
   .footer-inner { flex-direction: column; text-align: center; gap: 12px; }
 }
-
 
 /* ── 24. RESPONSIVE — MÓVIL (max-width: 600px) ──────────────── */
 @media (max-width: 600px) {
@@ -1895,14 +1915,12 @@ footer {
   }
 }
 
-
 /* ── 25. RESPONSIVE — MÓVIL PEQUEÑO (max-width: 380px) ──────── */
 @media (max-width: 380px) {
   .hero-text h1 { font-size: clamp(32px, 10vw, 38px); }
   .pillar { padding: 26px 18px; }
   .price-extra-block { flex-direction: column; text-align: center; }
 }
-
 
 /* ── 26. RESPONSIVE — MÓVIL HORIZONTAL ──────────────────────── */
 @media (max-width: 900px) and (orientation: landscape) {
@@ -1920,4 +1938,192 @@ footer {
   .video-modal-sound-row .hero-video-caption {
     display: none;
   }
+}
+
+/* ── 27. LEGAL PAGES (privacy, terms, cookies) ──────────────── */
+a.logo { text-decoration: none; }
+
+.back-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: inherit; font-size: 13px; font-weight: 600;
+  color: var(--text-2); background: none; border: none;
+  cursor: pointer; text-decoration: none;
+  padding: 7px 14px; border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: color 0.18s, border-color 0.18s;
+}
+.back-btn:hover { color: var(--text); border-color: var(--accent); }
+
+.legal-main {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 120px 40px 80px;
+}
+
+.page-title {
+  font-size: 36px; font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+.page-date {
+  font-size: 13px; color: var(--text-3);
+  margin-bottom: 60px;
+}
+
+.lang-block {
+  margin-bottom: 72px;
+  padding-bottom: 72px;
+  border-bottom: 1px solid var(--border);
+}
+.lang-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+.lang-tag {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 28px;
+  padding: 4px 10px;
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  border-radius: 6px;
+}
+
+.lang-block h2 {
+  font-size: 22px; font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+.lang-block h3 {
+  font-size: 15px; font-weight: 700;
+  color: var(--text);
+  margin: 28px 0 8px;
+}
+.lang-block p {
+  font-size: 15px; color: var(--text-2);
+  margin-bottom: 12px;
+}
+.lang-block a { color: var(--accent); text-decoration: none; }
+.lang-block a:hover { text-decoration: underline; }
+.lang-block ul {
+  list-style: none;
+  margin: 8px 0 12px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.lang-block ul li {
+  font-size: 15px; color: var(--text-2);
+  padding-left: 16px; position: relative;
+}
+.lang-block ul li::before {
+  content: '–';
+  position: absolute; left: 0;
+  color: var(--text-3);
+}
+
+@media (max-width: 600px) {
+  .legal-main { padding: 100px 20px 60px; }
+  .page-title { font-size: 28px; }
+}
+
+/* ── 28. INSTALLATION GUIDE (install-help.html) ─────────────── */
+.install-main {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 120px 40px 80px;
+}
+.install-main .page-title {
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 60px;
+  text-align: center;
+}
+.step {
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--border);
+}
+.step:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+.step-text {
+  font-size: 15px;
+  color: var(--text-2);
+  margin-bottom: 18px;
+  text-align: center;
+}
+.step-img-wrap {
+  text-align: center;
+}
+.step-img {
+  max-width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  display: inline-block;
+}
+.install-main .lang-block { display: none; }
+.install-main .lang-block.active { display: block; }
+
+.lang-wrap {
+  position: relative;
+  display: inline-block;
+}
+.lang-toggle {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-2);
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 7px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.18s, border-color 0.18s;
+}
+.lang-toggle:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+.lang-wrap .lang-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px;
+  display: none;
+  min-width: 100px;
+  z-index: 50;
+}
+.lang-wrap .lang-menu.open { display: block; }
+.lang-opt {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-2);
+  background: transparent;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+}
+.lang-opt:hover {
+  color: var(--text);
+  background: var(--bg-2);
+}
+.lang-opt.active { color: var(--accent); }
+
+@media (max-width: 600px) {
+  .install-main { padding: 100px 20px 60px; }
+  .install-main .page-title { font-size: 26px; }
 }

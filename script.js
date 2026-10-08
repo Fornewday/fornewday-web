@@ -64,6 +64,7 @@ const T = {
     footerRight: 'Windows 10 / 11',
     footerPrivacy: 'Política de privacidad',
     footerTerms: 'Términos de uso',
+    footerCookies: 'Cookies',
 
     ssEyebrow: 'Carga',
     ssH2: 'Controla el nivel de carga de la batería',
@@ -175,6 +176,7 @@ const T = {
     footerRight: 'Windows 10 / 11',
     footerPrivacy: 'Privacy Policy',
     footerTerms: 'Terms of Use',
+    footerCookies: 'Cookies',
 
     ssEyebrow: 'Charge',
     ssH2: 'Monitors the battery charge level',
@@ -283,8 +285,9 @@ const T = {
 
     footerCopy: '© 2026 Fornewday',
     footerRight: 'Windows 10 / 11',
-    footerPrivacy: 'Политика конфиденциальности',
-    footerTerms: 'Условия использования',
+    footerPrivacy: 'Конфиденциальность',
+    footerTerms: 'Условия',
+    footerCookies: 'Cookies',
 
     ssEyebrow: 'Заряд',
     ssH2: 'Контролирует уровень заряда батареи',
@@ -397,6 +400,7 @@ function setLang(lang) {
   set('footer-right',   t.footerRight);
   set('footer-privacy', t.footerPrivacy);
   set('footer-terms',   t.footerTerms);
+  set('footer-cookies', t.footerCookies);
 
   set('ss-eyebrow', t.ssEyebrow);
   set('ss-h2',      t.ssH2);
