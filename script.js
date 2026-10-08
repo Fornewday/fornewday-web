@@ -62,8 +62,8 @@ const T = {
 
     footerCopy: '© 2026 Fornewday',
     footerRight: 'Windows 10 / 11',
-    footerPrivacy: 'Política de privacidad',
-    footerTerms: 'Términos de uso',
+    footerPrivacy: 'Privacidad',
+    footerTerms: 'Términos',
     footerCookies: 'Cookies',
 
     ssEyebrow: 'Carga',
