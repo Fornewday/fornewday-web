@@ -6,5 +6,6 @@ Disallow: /install-help.html
 Disallow: /checkout.html
 Disallow: /privacy.html
 Disallow: /terms.html
+Disallow: /cookies.html
 
 Sitemap: https://batlive.app/sitemap.xml
