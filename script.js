@@ -109,7 +109,7 @@ const T = {
     fq9: '¿Qué recibo justo después del pago?',
     fa9: 'Recibirás por email tu clave de licencia y el enlace de descarga. Descarga, instala e introduce tu clave — ¡y listo!',
     fq10: '¿Existe política de reembolso?',
-    fa10: 'BatLive es un producto digital de entrega inmediata, por lo que se renuncia al derecho de desistimiento de 14 días en el checkout. No obstante, si tienes un problema técnico, contáctanos dentro de los 14 días posteriores a la compra y estudiaremos tu caso de forma individual.',
+    fa10: 'BatLive es un producto digital de entrega inmediata: al pagar aceptas el acceso inmediato y renuncias al derecho de desistimiento de 14 días. Si tienes un problema técnico, escríbenos dentro de los 14 días posteriores a la compra y, como garantía comercial voluntaria, estudiaremos tu caso.',
 
     contactH2: '¿Necesitas ayuda?',
     contactSub: 'Dudas sobre tu licencia o el funcionamiento de BatLive — escríbenos',
@@ -220,7 +220,7 @@ const T = {
     fq9: 'What do I receive after purchase?',
     fa9: 'You\'ll receive your license key and download link by email. Simply download BatLive, install it, enter your license key, and you\'re ready to go!',
     fq10: 'Do you offer refunds?',
-    fa10: 'BatLive is a digital product delivered immediately after purchase, so the 14-day right of withdrawal is waived during checkout. However, if you experience a technical issue, contact us within 14 days of purchase, and we\'ll review your case individually.',
+    fa10: 'BatLive is a digital product delivered immediately after purchase: by paying, you agree to immediate access and waive your 14-day right of withdrawal. If you experience a technical issue, contact us within 14 days of purchase and, as a voluntary commercial guarantee, we\'ll review your case.',
 
     contactH2: 'Need help?',
     contactSub: 'Questions about your license or how BatLive works — write to us',
@@ -331,7 +331,7 @@ const T = {
     fq9: 'Что я получаю сразу после оплаты?',
     fa9: 'Вы получите на email лицензионный ключ и ссылку для скачивания. Скачайте, установите и введите ключ — готово!',
     fq10: 'Есть ли возможность вернуть деньги?',
-    fa10: 'BatLive — это цифровой продукт моментальной доставки, поэтому при оформлении заказа вы соглашаетесь с отказом от 14-дневного права на возврат. Тем не менее, если у вас возникнут технические проблемы, свяжитесь с нами в течение 14 дней после покупки, и мы рассмотрим ваш случай индивидуально.',
+    fa10: 'BatLive — цифровой продукт моментальной доставки: оплачивая, вы соглашаетесь на немедленный доступ и отказываетесь от 14-дневного права на возврат. Если возникнут технические проблемы, напишите нам в течение 14 дней после покупки: в качестве добровольной гарантии мы рассмотрим ваш случай.',
 
     contactH2: 'Нужна помощь?',
     contactSub: 'Вопросы по лицензии или работе BatLive — напишите нам',
