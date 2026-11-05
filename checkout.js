@@ -24,6 +24,7 @@ const CO = {
     priceNote: 'Taxes included',
     consent: 'I agree that the digital product is delivered immediately upon payment and I expressly waive my 14-day right of withdrawal.',
     termsLink: 'Read full terms',
+    euOnly: 'BatLive is only sold in the European Union.',
     payText: 'Pay €4.99',
     priceNum: '4.99',
     secure: 'Secure payment via Stripe',
@@ -38,6 +39,7 @@ const CO = {
     priceNote: 'Impuestos incluidos',
     consent: 'Acepto que el producto digital se entrega inmediatamente tras el pago y renuncio expresamente a mi derecho de desistimiento de 14 días.',
     termsLink: 'Leer términos completos',
+    euOnly: 'BatLive solo se vende en la Unión Europea.',
     payText: 'Pagar 4,99 €',
     priceNum: '4,99',
     secure: 'Pago seguro mediante Stripe',
@@ -51,7 +53,8 @@ const CO = {
     inc3: 'Поддержка по электронной почте',
     priceNote: 'Налоги включены',
     consent: 'Я согласен, что цифровой продукт доставляется немедленно после оплаты, и я отказываюсь от своего 14-дневного права на возврат.',
-    termsLink: 'Читать полные условия',
+    termsLink: 'Условия покупки',
+    euOnly: 'BatLive продаётся только в Европейском союзе.',
     payText: 'Оплатить 4,99 €',
     priceNum: '4,99',
     secure: 'Безопасная оплата через Stripe',
@@ -127,7 +130,7 @@ function goToStripe() {
       if (res.ok && res.data.url) {
         window.location.href = res.data.url;
       } else if (res.data && res.data.error === 'not_eu') {
-        alert('BatLive is only sold in the European Union.');
+        alert((CO[lang] || CO.en).euOnly);
       } else {
         alert('Error. Please try again.');
       }
