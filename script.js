@@ -11,9 +11,8 @@
    6.  STATUS BAR animada (animateStatusBar)
    7.  FAQ TOGGLE (toggleFaq)
    8.  MODAL SOPORTE (openModal / closeModal / submit)
-   9.  LOAD REVIEWS (loadReviews / escapeHtml)
-   10. VÍDEO HERO (openVideoModal / closeVideoModal / toggleSound)
-   11. INIT (auto-ejecución al cargar)
+   9. VÍDEO HERO (openVideoModal / closeVideoModal / toggleSound)
+   10. INIT (auto-ejecución al cargar)
    ════════════════════════════════════════════════════════════════ */
 
 /* ── 1. TRADUCCIONES ─────────────────────────────────────── */
@@ -617,82 +616,7 @@ if (supportFormEl) supportFormEl.addEventListener('submit', function(e) {
   });
 });
 
-/* ── 9. LOAD REVIEWS ──────────────────────────────────────── */
-async function loadReviews() {
-  const section = document.getElementById('reviews');
-  const grid = document.getElementById('reviews-grid');
-  const moreWrap = document.querySelector('.reviews-more-wrap');
-  const moreBtn = document.getElementById('reviews-more-btn');
-  if (!section || !grid) return;
-
-  const lang = localStorage.getItem('batlive-lang') || 'en';
-  const labels = {
-    en: { more: 'See more' },
-    es: { more: 'Ver más' },
-    ru: { more: 'Ещё' },
-  };
-  const l = labels[lang] || labels.en;
-
-  const countryNames = {
-    en: { ES: 'Spain', RU: 'Russia', US: 'United States', GB: 'United Kingdom', FR: 'France', DE: 'Germany', IT: 'Italy', PT: 'Portugal', MX: 'Mexico', AR: 'Argentina', CO: 'Colombia', CL: 'Chile', BR: 'Brazil' },
-    es: { ES: 'España', RU: 'Rusia', US: 'Estados Unidos', GB: 'Reino Unido', FR: 'Francia', DE: 'Alemania', IT: 'Italia', PT: 'Portugal', MX: 'México', AR: 'Argentina', CO: 'Colombia', CL: 'Chile', BR: 'Brasil' },
-    ru: { ES: 'Испания', RU: 'Россия', US: 'США', GB: 'Великобритания', FR: 'Франция', DE: 'Германия', IT: 'Италия', PT: 'Португалия', MX: 'Мексика', AR: 'Аргентина', CO: 'Колумбия', CL: 'Чили', BR: 'Бразилия' },
-  };
-  const cn = countryNames[lang] || countryNames.en;
-
-  try {
-    const res = await fetch('https://batlive-server.onrender.com/reviews-publicadas');
-    const data = await res.json();
-    if (!data.ok || !data.reviews || data.reviews.length === 0) return;
-
-    const PAGE_SIZE = window.matchMedia('(max-width: 600px)').matches ? 2 : 3;
-    const allReviews = data.reviews;
-    let currentPage = 0;
-
-    function renderPage() {
-      const start = currentPage * PAGE_SIZE;
-      const chunk = allReviews.slice(start, start + PAGE_SIZE);
-      grid.innerHTML = chunk.map(function(r) {
-        const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
-        const lic = r.licencias || {};
-        const country = lic.pais ? (cn[lic.pais] || lic.pais) : '';
-        let author = '';
-        if (r.name && country) author = r.name + ' · ' + country;
-        else if (r.name) author = r.name;
-        else if (country) author = country;
-        return '<div class="review-card-item">' +
-                 '<div class="review-card-stars">' + stars + '</div>' +
-                 '<p class="review-card-comment">' + escapeHtml(r.comment) + '</p>' +
-                 '<p class="review-card-author">' + escapeHtml(author) + '</p>' +
-               '</div>';
-      }).join('');
-    }
-
-    renderPage();
-    section.style.display = 'block';
-
-    if (allReviews.length > PAGE_SIZE) {
-      moreBtn.textContent = l.more;
-      moreWrap.style.display = 'block';
-      moreBtn.href = 'javascript:void(0)';
-      moreBtn.onclick = function() {
-        const totalPages = Math.ceil(allReviews.length / PAGE_SIZE);
-        currentPage = (currentPage + 1) % totalPages;
-        renderPage();
-      };
-    }
-  } catch (e) {}
-}
-
-function escapeHtml(s) {
-  if (!s) return '';
-  return s.replace(/[&<>"']/g, function(c) {
-    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
-  });
-}
-
-
-/* ── 10. VÍDEO HERO — MODAL Y SONIDO ──────────────────────── */
+/* ── 9. VÍDEO HERO — MODAL Y SONIDO ──────────────────────── */
 let videoWrapOriginalParent = null;
 let videoWrapOriginalNext   = null;
 
@@ -766,7 +690,7 @@ if (videoModalEl) {
   });
 }
 
-/* ── 11. INIT ──────────────────────────────────────────────── */
+/* ── 10. INIT ──────────────────────────────────────────────── */
 (function init() {
   // Restaurar preferencias guardadas
   const savedTheme = localStorage.getItem('batlive-theme');
@@ -777,5 +701,4 @@ if (videoModalEl) {
 
   initReveal();
   animateStatusBar();
-  loadReviews();
 })();
