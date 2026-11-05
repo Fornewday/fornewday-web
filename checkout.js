@@ -27,7 +27,7 @@ const CO = {
     euOnly: 'BatLive is only sold in the European Union.',
     payText: 'Pay €4.99',
     priceNum: '4.99',
-    secure: 'Secure payment via Stripe',
+    secure: 'Secure payment via Stripe<br>Sold only in the European Union',
   },
   es: {
     eyebrow: 'Resumen del pedido',
@@ -42,7 +42,7 @@ const CO = {
     euOnly: 'BatLive solo se vende en la Unión Europea.',
     payText: 'Pagar 4,99 €',
     priceNum: '4,99',
-    secure: 'Pago seguro mediante Stripe',
+    secure: 'Pago seguro mediante Stripe<br>Venta solo en la Unión Europea',
   },
   ru: {
     eyebrow: 'Детали покупки',
@@ -57,7 +57,7 @@ const CO = {
     euOnly: 'BatLive продаётся только в Европейском союзе.',
     payText: 'Оплатить 4,99 €',
     priceNum: '4,99',
-    secure: 'Безопасная оплата через Stripe',
+    secure: 'Безопасная оплата через Stripe<br>Продажа только в Европейском союзе',
   }
 };
 
@@ -70,9 +70,11 @@ function applyCheckoutLang() {
   const cur = document.getElementById('lang-current');
   if (cur) cur.textContent = codes[lang] || 'EN';
 
-  const set = (id, val) => {
+  const set = (id, val, html = false) => {
     const el = document.getElementById(id);
-    if (el) el.textContent = val;
+    if (!el) return;
+    if (html) el.innerHTML = val;
+    else el.textContent = val;
   };
 
   set('co-eyebrow', c.eyebrow);
@@ -84,7 +86,7 @@ function applyCheckoutLang() {
   set('co-price-note', c.priceNote);
   set('co-terms-link', c.termsLink);
   set('co-pay-text', c.payText);
-  set('co-secure', c.secure);
+  set('co-secure', c.secure, true);
   set('co-price-num', c.priceNum);
 
   // El texto del consent lleva el link dentro, hay que reconstruirlo
