@@ -115,10 +115,24 @@ function goToStripe() {
   };
   localStorage.setItem('batlive-consent', JSON.stringify(log));
 
-  // Payment Link REAL (modo live)
+  // Sesión de pago creada por el Worker (solo UE)
   // client_reference_id = idioma → lo usa el webhook para enviar email en ese idioma
-  const STRIPE_LINK = 'https://buy.stripe.com/3cI14m9gN8WTcDEb8qgIo00';
-  window.location.href = STRIPE_LINK + '?client_reference_id=' + lang;
+  fetch('https://batlive-checkout.fornewday-official.workers.dev', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ lang: lang })
+  })
+    .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, data: d }; }); })
+    .then(function (res) {
+      if (res.ok && res.data.url) {
+        window.location.href = res.data.url;
+      } else if (res.data && res.data.error === 'not_eu') {
+        alert('BatLive is only sold in the European Union.');
+      } else {
+        alert('Error. Please try again.');
+      }
+    })
+    .catch(function () { alert('Error. Please try again.'); });
 }
 
 /* ── 5. INIT ────────────────────────────────────────────── */
