@@ -25,6 +25,7 @@ const CO = {
     consent: 'I agree that the digital product is delivered immediately upon payment and I expressly waive my 14-day right of withdrawal.',
     termsLink: 'Read full terms',
     euOnly: 'BatLive is only sold in the European Union.',
+    errGeneric: 'Error. Please try again.',
     payText: 'Pay €4.99',
     priceNum: '4.99',
     secure: 'Secure payment via Stripe<br>Sold only in the European Union',
@@ -40,6 +41,7 @@ const CO = {
     consent: 'Acepto que el producto digital se entrega inmediatamente tras el pago y renuncio expresamente a mi derecho de desistimiento de 14 días.',
     termsLink: 'Leer términos completos',
     euOnly: 'BatLive solo se vende en la Unión Europea.',
+    errGeneric: 'Error. Inténtalo de nuevo.',
     payText: 'Pagar 4,99 €',
     priceNum: '4,99',
     secure: 'Pago seguro mediante Stripe<br>Venta solo en la Unión Europea',
@@ -55,6 +57,7 @@ const CO = {
     consent: 'Я согласен, что цифровой продукт доставляется немедленно после оплаты, и я отказываюсь от своего 14-дневного права на возврат.',
     termsLink: 'Условия покупки',
     euOnly: 'BatLive продаётся только в Европейском союзе.',
+    errGeneric: 'Ошибка. Попробуй ещё раз.',
     payText: 'Оплатить 4,99 €',
     priceNum: '4,99',
     secure: 'Безопасная оплата через Stripe<br>Продажа только в Европейском союзе',
@@ -134,10 +137,10 @@ function goToStripe() {
       } else if (res.data && res.data.error === 'not_eu') {
         alert((CO[lang] || CO.en).euOnly);
       } else {
-        alert('Error. Please try again.');
+        alert((CO[lang] || CO.en).errGeneric);
       }
     })
-    .catch(function () { alert('Error. Please try again.'); });
+    .catch(function () { alert((CO[lang] || CO.en).errGeneric); });
 }
 
 /* ── 5. INIT ────────────────────────────────────────────── */
