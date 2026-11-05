@@ -23,7 +23,7 @@ const T = {
     statusText: 'Monitorización · 67%',
     sub: 'Ralentiza el desgaste y preserva la capacidad original a largo plazo',
     btn: 'Comprar BatLive · 4,99 €',
-    note: 'Impuestos incluidos · Pago único · Sin suscripción<br>Venta solo en la Unión Europea',
+    note: 'Impuestos incluidos · Pago único · Sin suscripción<br><span class="eu-sale-note">Venta en la Unión Europea (<a href="terms.html">Condiciones</a>)</span>',
     heroVideoCaption: 'El sonido va sincronizado con la ventana emergente',
 
     whatEyebrow: 'BatLive',
@@ -84,7 +84,7 @@ const T = {
     priceBtnText: 'Comprar BatLive',
     priceNum: '4,99',
     priceTax: 'Impuestos incluidos',
-    priceSecure: 'Pago seguro mediante Stripe<br>Venta solo en la Unión Europea',
+    priceSecure: 'Pago seguro mediante Stripe<br><span class="eu-sale-note">Venta en la Unión Europea (<a href="terms.html">Condiciones</a>)</span>',
     priceExtra: 'Recibirás licencia y descarga de BatLive al instante por email',
 
     faqEyebrow: 'FAQ',
@@ -135,7 +135,7 @@ const T = {
     statusText: 'Monitoring · 67%',
     sub: 'Slows down wear and tear and preserves its original capacity over time',
     btn: 'Buy BatLive · €4.99',
-    note: 'Taxes included · One-time payment · No subscription<br>Sold only in the European Union',
+    note: 'Taxes included · One-time payment · No subscription<br><span class="eu-sale-note">Sold in the European Union (<a href="terms.html">Terms</a>)</span>',
     heroVideoCaption: 'The sound plays when the pop-up appears',
 
     whatEyebrow: 'BatLive',
@@ -195,7 +195,7 @@ const T = {
     priceBtnText: 'Buy BatLive',
     priceNum: '4.99',
     priceTax: 'Taxes included',
-    priceSecure: 'Secure payment powered by Stripe<br>Sold only in the European Union',
+    priceSecure: 'Secure payment powered by Stripe<br><span class="eu-sale-note">Sold in the European Union (<a href="terms.html">Terms</a>)</span>',
     priceExtra: 'License and BatLive download link by email instantly',
 
     faqEyebrow: 'FAQ',
@@ -246,7 +246,7 @@ const T = {
     statusText: 'Мониторинг · 67%',
     sub: 'Замедли износ батареи и сохрани её первоначальную емкость надолго',
     btn: 'Купить BatLive · 4,99 €',
-    note: 'Налоги включены · Разовая оплата · Без подписки<br>Продажа только в Европейском союзе',
+    note: 'Налоги включены · Разовая оплата · Без подписки<br><span class="eu-sale-note">Продажа в Европейском союзе (<a href="terms.html">Условия</a>)</span>',
     heroVideoCaption: 'Звук появится синхронно с окном уведомления',
 
     whatEyebrow: 'BatLive',
@@ -306,7 +306,7 @@ const T = {
     priceBtnText: 'Купить BatLive',
     priceNum: '4,99',
     priceTax: 'Налоги включены',
-    priceSecure: 'Безопасная оплата через Stripe<br>Продажа только в Европейском союзе',
+    priceSecure: 'Безопасная оплата через Stripe<br><span class="eu-sale-note">Продажа в Европейском союзе (<a href="terms.html">Условия</a>)</span>',
     priceExtra: 'Лицензионный ключ и ссылка на скачивание BatLive придут на email',
 
     faqEyebrow: 'FAQ',

@@ -28,7 +28,7 @@ const CO = {
     errGeneric: 'Error. Please try again.',
     payText: 'Pay €4.99',
     priceNum: '4.99',
-    secure: 'Secure payment via Stripe<br>Sold only in the European Union',
+    secure: 'Secure payment via Stripe<br><span class="eu-sale-note">Sold in the European Union (<a href="terms.html">Terms</a>)</span>',
   },
   es: {
     eyebrow: 'Resumen del pedido',
@@ -44,7 +44,7 @@ const CO = {
     errGeneric: 'Error. Inténtalo de nuevo.',
     payText: 'Pagar 4,99 €',
     priceNum: '4,99',
-    secure: 'Pago seguro mediante Stripe<br>Venta solo en la Unión Europea',
+    secure: 'Pago seguro mediante Stripe<br><span class="eu-sale-note">Venta en la Unión Europea (<a href="terms.html">Condiciones</a>)</span>',
   },
   ru: {
     eyebrow: 'Детали покупки',
@@ -60,7 +60,7 @@ const CO = {
     errGeneric: 'Ошибка. Попробуй ещё раз.',
     payText: 'Оплатить 4,99 €',
     priceNum: '4,99',
-    secure: 'Безопасная оплата через Stripe<br>Продажа только в Европейском союзе',
+    secure: 'Безопасная оплата через Stripe<br><span class="eu-sale-note">Продажа в Европейском союзе (<a href="terms.html">Условия</a>)</span>',
   }
 };
 
