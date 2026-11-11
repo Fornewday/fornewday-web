@@ -77,6 +77,7 @@
   </script>
 </head>
 <body>
+<div style="position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;z-index:99999;display:flex;justify-content:center;align-items:center;font-size:24px;font-weight:bold;font-family:sans-serif;color:#000;">Sitio en mantenimiento</div>
 
 <!-- ── 1. NAVBAR ──────────────────────────────────────────── -->
 <nav id="navbar">
@@ -155,7 +156,7 @@
       </div>
 
       <div class="cta-block">
-        <a href="checkout.html" class="btn-primary" id="hero-btn">
+        <a href="#" class="btn-primary" id="hero-btn" onclick="alert('Ventas pausadas temporalmente'); return false;">
           <span id="hero-btn-text">Buy BatLive · €4.99</span>
         </a>
         <p class="cta-note" id="hero-note">Taxes included · One-time payment · No subscription</p>
