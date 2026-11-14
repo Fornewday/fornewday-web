@@ -399,7 +399,7 @@ function setLang(lang) {
   set('footer-right',   t.footerRight);
   set('footer-privacy', t.footerPrivacy);
   set('footer-terms',   t.footerTerms);
-  set('footer-cookies', t.footerCookies);
+  set('footer-ck',      t.footerCookies);
 
   set('ss-eyebrow', t.ssEyebrow);
   set('ss-h2',      t.ssH2);
